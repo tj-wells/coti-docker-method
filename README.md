@@ -79,12 +79,11 @@ The testnet node can be run in the foreground with
 docker-compose up
 ```
 
-This lets you check the logs and make sure the node is working correctly. Once you are confident your node runs correctly, it can be run in detached mode
+This lets you check the logs and make sure the node is working correctly. Once you are confident your node runs correctly, use
 
 ```
 docker-compose up -d
 ```
-
 to run the containers in the background.
 
 Depending on your OS and version of docker-compose, the `docker-compose` syntax may need to be changed to `docker compose`.
