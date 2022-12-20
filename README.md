@@ -38,7 +38,7 @@ docker compose version
 ## 2. Clone the Repository
 
 ```
-git clone https://github.com/tj-wells/docker-node.git && cd docker-node
+git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 ```
 
 ## 3. Define the Environment
