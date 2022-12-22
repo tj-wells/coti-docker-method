@@ -68,6 +68,7 @@ An example .env file (.env.sample) is provided in the repository. Copy it to sta
     <summary>Available COTI Node Versions</summary>
     <ul>
       <li>3.1.0</li>
+      <li>3.1.2.RELEASE</li>
     </ul>
 </details>
 
@@ -88,6 +89,14 @@ to run the containers in the background.
 
 Depending on your OS and version of docker-compose, the `docker-compose` syntax may need to be changed to `docker compose`.
 
+# Updating Your Node
+
+Follow the instructions below to update the software version being run by your node:
+
+1. Check that the version you would like to update to is listed in the section [Available Versions](#available-versions)
+2. Edit the new version number in your .env file
+3. Run `docker-compose up -d` to download and run the new version
+
 # Credits
 
 - This method uses the official code for COTI nodes at https://github.com/coti-io/coti-node.
@@ -98,8 +107,11 @@ Depending on your OS and version of docker-compose, the `docker-compose` syntax 
 Below is a list of common errors/problems that have been encountered when setting up the node software, and their solutions.
 
 - `Timeout during connect (likely firewall problem)`
-
   - For the SSL verification to work, your server needs to be able to accept incoming connections from the internet. For security reasons many cloud providers only allow incoming connections from port 22 (SSH) by default. Since both ports 80 and 443 are used in the installation of the SSL certificates, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine.
+
+* My node repeatedly reconnects to the network
+  - COTI's node manager performs health status checks on your node using port 7070.
+  - To pass the health checks, ensure that port 7070 is accessible to the IP address "52.59.142.53" for testnet nodes, and "35.157.47.86" for mainnet nodes.
 
 - If none of the documentation above helps, you can ask me, check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI discord server](https://discord.com/invite/wfAQfbc3Df).
 
