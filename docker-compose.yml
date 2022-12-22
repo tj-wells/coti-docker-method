@@ -3,7 +3,7 @@ version: '3'
 services:
   coti-node:
     image: 'ghcr.io/tj-wells/atom-node/coti-node:${VERSION}'
-    command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-${VERSION}.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
+    command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-${VERSION}.jar --spring.config.additional-location=./data/fullnode.properties"
     ports:
       - '7070:7070'
     expose:
