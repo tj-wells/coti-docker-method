@@ -64,13 +64,11 @@ An example .env file, `.env.sample`, is provided in the repository. Copy it to s
 
 ### Available Versions
 
-<details>
-    <summary>Available COTI Node Versions</summary>
-    <ul>
-      <li>3.1.2</li>
-      <li>3.1.0</li>
-    </ul>
-</details>
+<summary>Available COTI Node Versions</summary>
+<ul>
+  <li>3.1.2</li>
+  <li>3.1.0</li>
+</ul>
 
 # Running your testnet node
 
