@@ -60,7 +60,7 @@ where,
   - If you're using a subdomain, include that too, for example, "testnet.my-node.com".
 - the version you wish to run to should be in the format "X.Y.Z", for example, "3.1.2". See the dropdown below for the versions currently available.
 
-An example .env file is provided in the repository (as `.env.sample`). Copy it to start from a valid template file: `cp .env.sample .env`).
+An example .env file, `.env.sample`, is provided in the repository. Copy it to start from a valid template file: `cp .env.sample .env`).
 
 ### Available Versions
 
