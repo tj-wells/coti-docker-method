@@ -79,7 +79,7 @@ The testnet node can be run in the foreground with
 docker-compose up
 ```
 
-This lets you check the logs and make sure the node is configured correctly. Once you are confident your node runs correctly the containers can be run in the background with
+This lets you check the logs and make sure the node is configured correctly. Once you are confident your node runs correctly, the containers can be run in the background with
 
 ```
 docker-compose up -d
@@ -87,19 +87,13 @@ docker-compose up -d
 
 Depending on your OS and version of docker-compose, the `docker-compose` syntax may need to be changed to `docker compose`.
 
-# Updating Your Node
+# Upgrading Your Node
 
 Follow the instructions below to update the software version being run by your node:
 
 1. Check that the version you would like to update to is listed in the section [Available Versions](#available-versions)
 2. Update the new version number in your .env file
 3. Run `docker-compose up -d` to download and run the new version
-
-# Credits
-
-- This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
-- Thanks to GeordieR, whose instructions were helpful in me figuring out how to do this.
-- Credits to the Coti community for their support and guidance given to testnet and mainnet node operators.
 
 # Debugging
 
@@ -111,12 +105,12 @@ Below is a list of common errors/problems that have been encountered when settin
 
 * My node repeatedly reconnects to the network
   - COTI's node manager performs health status checks on your node using port 7070.
-  - To pass the health checks, ensure that port 7070 is accessible from the IP address "52.59.142.53" for testnet nodes, and "35.157.47.86" for mainnet nodes.
+  - To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP address "52.59.142.53" for testnet nodes, and "35.157.47.86" for mainnet nodes.
 
-- If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI discord server](https://discord.com/invite/wfAQfbc3Df).
+If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # STAY COTI
 
 Stay Coti.
 
-If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. It would be great to say hi and talk Coti!
+If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come say hi and talk Coti!
