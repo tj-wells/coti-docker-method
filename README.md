@@ -2,9 +2,7 @@
 
 # COTI Node Docker Installation Method
 
-Purpose: Provide an easy method to install, upgrade and maintain testnet nodes with Docker containers.
-
-This method is only supported for testnet nodes at present.
+Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certificates, using Docker.
 
 # Usage Instructions
 
@@ -43,14 +41,14 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 
 ## 3. Define the Environment
 
-The .env file contains the configuration variables of your node, and should have the format:
+The .env file defines the environment variables of your node, and should be presented in the format:
 
 ```.env
 ACTION="testnet"
 SERVERNAME="<Your desired testnet URL>"
 PKEY="<Your private key>"
 SEED="<Your seed key>"
-VERSION="<Version coti-node you wish to run>"
+VERSION="X.Y.Z"
 EMAIL="<Your email address>"
 ```
 
@@ -60,7 +58,7 @@ where,
   - If you're using a subdomain, include that too, for example, "testnet.my-node.com".
 - the version you wish to run to should be in the format "X.Y.Z", for example, "3.1.2". See the list below for the versions currently available for installation.
 
-An example .env file, `.env.sample`, is provided in the repository. Copy it to start from a valid template file: `cp .env.sample .env`.
+An example .env file, `.env.sample`, is provided in the repository. You may copy it to start from a valid template file: `cp .env.sample .env`.
 
 ### Available Versions
 
@@ -79,7 +77,7 @@ The testnet node can be run in the foreground with
 docker-compose up
 ```
 
-This lets you check the logs and make sure the node is configured correctly. Once you are confident your node runs correctly, the containers can be run in the background with
+This lets you check the logs and make sure the node is configured correctly. Once you are confident your node is running correctly, the containers can be run in the background with
 
 ```
 docker-compose up -d
@@ -89,7 +87,7 @@ Depending on your OS and version of docker-compose, the `docker-compose` syntax 
 
 # Upgrading Your Node
 
-Follow the instructions below to update the software version being run by your node:
+Your node version can be updated by following the following steps:
 
 1. Check that the version you would like to update to is listed in the section [Available Versions](#available-versions)
 2. Update the new version number in your .env file
@@ -105,12 +103,14 @@ Below is a list of common errors/problems that have been encountered when settin
 
 * My node repeatedly reconnects to the network
   - COTI's node manager performs health status checks on your node using port 7070.
-  - To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP address "52.59.142.53" for testnet nodes, and "35.157.47.86" for mainnet nodes.
+  - To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP addresses
+    - "52.59.142.53" for testnet nodes,
+    - "35.157.47.86" for mainnet nodes.
 
-If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI discord server](https://discord.com/invite/wfAQfbc3Df).
+If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # STAY COTI
 
-Stay Coti.
+Stay Coti. ️‍🔥
 
 If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come say hi and talk Coti!
