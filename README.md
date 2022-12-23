@@ -4,7 +4,7 @@
 
 Purpose: Provide an easy method to install, upgrade and maintain testnet node with Docker containers.
 
-Note: This method is only available for testnet nodes at present.
+This method is only available for testnet nodes at present.
 
 # Usage Instructions
 
@@ -56,19 +56,19 @@ EMAIL="<Your email address>"
 
 where,
 
-- SERVERNAME is your desired testnet URL is in the format "atom-node.xyz", i.e. without 'http(s)://' and 'www.'.
-  - If you want to use a subdomain, included that too, for example, "testnet.your-node.com".
-- the version you wish to run to should be in the format "X.Y.Z", for example, "3.1.0". See the dropdown below for the versions available.
+- SERVERNAME is your desired testnet URL is in the format "my-node.com", i.e. without 'http(s)://' and 'www.'.
+  - If you're using a subdomain, include that too, for example, "testnet.my-node.com".
+- the version you wish to run to should be in the format "X.Y.Z", for example, "3.1.2". See the dropdown below for the versions currently available.
 
-An example .env file (.env.sample) is provided in the repository. Copy it to start from a valid template (`cp .env.sample .env`).
+An example .env file is provided in the repository (as `.env.sample`). Copy it to start from a valid template file: `cp .env.sample .env`).
 
 ### Available Versions
 
 <details>
     <summary>Available COTI Node Versions</summary>
     <ul>
+      <li>3.1.2</li>
       <li>3.1.0</li>
-      <li>3.1.2.RELEASE</li>
     </ul>
 </details>
 
@@ -80,12 +80,11 @@ The testnet node can be run in the foreground with
 docker-compose up
 ```
 
-This lets you check the logs and make sure the node is working correctly. Once you are confident your node runs correctly, use
+This lets you check the logs and make sure the node is configured correctly. Once you are confident your node runs correctly the containers can be run in the background with
 
 ```
 docker-compose up -d
 ```
-to run the containers in the background.
 
 Depending on your OS and version of docker-compose, the `docker-compose` syntax may need to be changed to `docker compose`.
 
@@ -107,13 +106,14 @@ Follow the instructions below to update the software version being run by your n
 Below is a list of common errors/problems that have been encountered when setting up the node software, and their solutions.
 
 - `Timeout during connect (likely firewall problem)`
-  - For the SSL verification to work, your server needs to be able to accept incoming connections from the internet. For security reasons many cloud providers only allow incoming connections from port 22 (SSH) by default. Since both ports 80 and 443 are used in the installation of the SSL certificates, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine.
+  - For the SSL verification to work, your server needs to be able to accept incoming connections from the internet on ports 80 and 443.
+    To get the SSL certificates installed, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine. The precise steps for this will vary depending on your VPS provider.
 
-* My node repeatedly reconnects to the network
+* My node is getting blacklisted, or repeatedly reconnects to the network
   - COTI's node manager performs health status checks on your node using port 7070.
   - To pass the health checks, ensure that port 7070 is accessible to the IP address "52.59.142.53" for testnet nodes, and "35.157.47.86" for mainnet nodes.
 
-- If none of the documentation above helps, you can ask me, check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI discord server](https://discord.com/invite/wfAQfbc3Df).
+- If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # STAY COTI
 
