@@ -12,6 +12,8 @@ services:
     restart: on-failure
     env_file:
       - .env
+    volumes:
+      - './data:/app/data'
     environment:
       VIRTUAL_HOST: ${SERVERNAME}
       VIRTUAL_PORT: 7070

@@ -2,7 +2,7 @@
 
 # COTI Node Docker Installation Method
 
-Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certificates, using Docker.
+Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certificate renewal, using Docker.
 
 # Usage Instructions
 
@@ -41,7 +41,7 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 
 ## 3. Define the Environment
 
-The .env file defines the environment variables of your node, and should be presented in the format:
+The .env file defines the environment variables of your node, and should be formatted as
 
 ```.env
 ACTION="testnet"
@@ -54,7 +54,7 @@ EMAIL="<Your email address>"
 
 where,
 
-- SERVERNAME is your desired testnet URL is in the format "my-node.com", i.e. without 'http(s)://' and 'www.'.
+- SERVERNAME is your desired testnet URL is in the form "my-node.com" (i.e. without 'http(s)://' and 'www.').
   - If you're using a subdomain, include that too, for example, "testnet.my-node.com".
 - the version you wish to run to should be in the format "X.Y.Z", for example, "3.1.2". See the list below for the versions currently available for installation.
 
@@ -108,6 +108,10 @@ Below is a list of common errors/problems that have been encountered when settin
     - "35.157.47.86" for mainnet nodes.
 
 If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
+
+# How are the Docker images built?
+
+For transparency, the full scripts used to build the images used in this installation method are shown <a href="https://github.com/tj-wells/coti-image-builder" target="_blank">here</a>.
 
 # STAY COTI
 
