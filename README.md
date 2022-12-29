@@ -107,7 +107,7 @@ Below is a list of common errors/problems that have been encountered when settin
     - "52.59.142.53" for testnet nodes,
     - "35.157.47.86" for mainnet nodes.
 
-If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
+If none of the information above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # How are the Docker images built?
 
@@ -116,11 +116,11 @@ The complete scripts used to build the images used in this installation method a
 # Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
-- Thanks to GeordieR, whose scripts helped me develop this installation method using Docker.
+- Thanks to GeordieR, whose scripts assisted in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
 # STAY COTI
 
 Stay Coti. ️‍🔥
 
-If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come say hi and talk Coti!
+If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
