@@ -2,16 +2,16 @@
 
 # COTI Node Docker Installation Method
 
-Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certificate renewal, using Docker.
+Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certification, using Docker.
 
-# Usage Instructions
+# Installation Instructions
 
 ## 1. Install Docker
 
 This method requires that you have docker and docker-compose installed.
 
 <details>
-    <summary>Ubuntu 22.04 LTS Docker and docker-compose installation method.</summary>
+    <summary>Docker and docker-compose instructions for Ubuntu 22.04 LTS</summary>
     If you are working on Ubuntu 22.04, I suggest installing with the following commands:
 
 ```
@@ -41,7 +41,7 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 
 ## 3. Define the Environment
 
-The .env file defines the environment variables of your node, and should be formatted as
+The .env file defines the environment variables of your node, and should be specified in the format
 
 ```.env
 ACTION="testnet"
@@ -62,7 +62,7 @@ An example .env file, `.env.sample`, is provided in the repository. You may copy
 
 ### Available Versions
 
-Available COTI Node Versions:
+Available Coti Node Versions:
 
 <ul>
   <li>3.1.2</li>
@@ -107,11 +107,17 @@ Below is a list of common errors/problems that have been encountered when settin
     - "52.59.142.53" for testnet nodes,
     - "35.157.47.86" for mainnet nodes.
 
-If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), check GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
+If none of the documentation above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # How are the Docker images built?
 
-For transparency, the full scripts used to build the images used in this installation method are shown <a href="https://github.com/tj-wells/coti-image-builder" target="_blank">here</a>.
+The complete scripts used to build the images used in this installation method are shown <a href="https://github.com/tj-wells/coti-image-builder" target="_blank">here</a>.
+
+# Credits
+
+- This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
+- Thanks to GeordieR, whose scripts helped me develop this installation method using Docker.
+- Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
 # STAY COTI
 
