@@ -111,7 +111,7 @@ If none of the information above helps, you can ask me (<a href="https://twitter
 
 # How are the Docker images built?
 
-The complete scripts used to build the images used in this installation method are shown <a href="https://github.com/tj-wells/coti-image-builder" target="_blank">here</a>.
+The complete scripts used to build the images used in this installation method are shown <a href="https://github.com/tj-wells/coti-node-images" target="_blank">here</a>.
 
 # Credits
 
