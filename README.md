@@ -111,7 +111,7 @@ If none of the information above helps, you can ask me (<a href="https://twitter
 
 # How are the Docker images built?
 
-The complete scripts used to build the images used in this installation method are shown <a href="https://github.com/tj-wells/coti-node-images" target="_blank">here</a>.
+For complete transparency, the Docker images are publicly built in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>. All of the code and executions involved in the build process are automated, and fully public and transparent.
 
 # Credits
 
