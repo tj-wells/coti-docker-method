@@ -1,12 +1,14 @@
 # COTI Node Docker Installation Method
 
-Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certification, using Docker.
+Purpose: Provide an easy method to install, upgrade and maintain Coti nodes, with automatic SSL certification, using Docker containers.
 
 # Installation Instructions
 
 ## 1. Install Docker
 
 This method requires that you have docker and docker-compose installed.
+
+I have provided instructions for Ubuntu 22.04 LTS, but for other OSs you'll have to search on the internet.
 
 <details>
     <summary>Docker and docker-compose instructions for Ubuntu 22.04 LTS</summary>
@@ -37,12 +39,12 @@ docker compose version
 git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 ```
 
-## 3. Define the Environment
+## 3. Define your Environment
 
-The .env file defines the environment variables of your node, and should be specified in the format
+The .env file defines the environment variables of the Docker container, and should be specified in the format
 
 ```.env
-ACTION="testnet"
+ACTION="<testnet or mainnet>"
 SERVERNAME="<Your desired testnet URL>"
 PKEY="<Your private key>"
 SEED="<Your seed key>"
@@ -52,24 +54,24 @@ EMAIL="<Your email address>"
 
 where,
 
+- ACTION is set to either of the values "testnet" or "mainnet", depending on your use-case.
 - SERVERNAME is your desired testnet URL is in the form "my-node.com" (i.e. without 'http(s)://' and 'www.').
-  - If you're using a subdomain, include that too, for example, "testnet.my-node.com".
-- the version you wish to run to should be in the format "X.Y.Z", for example, "3.1.2". See the list below for the versions currently available for installation.
+  - If you are using a subdomain, include that too, for example, "testnet.my-node.com".
+- VERSION should be in the format "X.Y.Z", for example, "3.1.2". See the list below for the versions currently available for installation.
 
 An example .env file, `.env.sample`, is provided in the repository. You may copy it to start from a valid template file: `cp .env.sample .env`.
 
-### Available Versions
+### Available Node Versions
 
 Available Coti Node Versions:
 
 <ul>
   <li>3.1.2</li>
-  <li>3.1.0</li>
 </ul>
 
-# Running Your Testnet Node
+# Running Your Node
 
-The testnet node can be run in the foreground with
+The node can be run in the foreground with
 
 ```
 docker-compose up
@@ -81,15 +83,21 @@ This lets you check the logs and make sure the node is configured correctly. Onc
 docker-compose up -d
 ```
 
-Depending on your OS and version of docker-compose, the `docker-compose` syntax may need to be changed to `docker compose`.
+Depending on your OS and version of docker-compose, the `docker-compose` syntax may need to be modified to `docker compose`.
 
-# Upgrading Your Node
+# Upgrading Your Node Version
 
 Your node version can be updated by following the following steps:
 
 1. Check that the version you would like to update to is listed in the section [Available Versions](#available-versions)
 2. Update the new version number in your .env file
 3. Run `docker-compose up -d` to download and run the new version
+
+# How are the Docker images built?
+
+Since official Docker images are currently unavailable, I have set up a separate repository to create the images.
+
+For complete transparency, the Docker images are built in public in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>, to ensure that the Dockermages are fully open-source. All of the code and executions involved in the build process are automated, and fully public and transparent.
 
 # Debugging
 
@@ -107,10 +115,6 @@ Below is a list of common errors/problems that have been encountered when settin
 
 If none of the information above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
 
-# How are the Docker images built?
-
-For complete transparency, the Docker images are built in public in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>, to ensure that the Dockermages are fully open-source. All of the code and executions involved in the build process are automated, and fully public and transparent.
-
 # Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
@@ -122,5 +126,8 @@ For complete transparency, the Docker images are built in public in <a href="htt
 Stay Coti. ️‍🔥
 
 If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
+<br />
+<br />
+<br />
 
 <p align="center"><a href="https://twitter.com/tomjwells" target="_blank"><img src="https://cdn.discordapp.com/avatars/343604221331111946/65130831872c9daabdb0d803ce27e594.webp?size=240"></a></p>
