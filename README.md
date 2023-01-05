@@ -1,5 +1,3 @@
-<p align="center"><img src="https://cdn.discordapp.com/avatars/343604221331111946/65130831872c9daabdb0d803ce27e594.webp?size=240"></p>
-
 # COTI Node Docker Installation Method
 
 Purpose: Provide an easy method to install, upgrade and maintain testnet nodes, with automatic SSL certification, using Docker.
@@ -111,7 +109,7 @@ If none of the information above helps, you can ask me (<a href="https://twitter
 
 # How are the Docker images built?
 
-For complete transparency, the Docker images are publicly built in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>. All of the code and executions involved in the build process are automated, and fully public and transparent.
+For complete transparency, the Docker images are built in public in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>, to ensure that the Dockermages are fully open-source. All of the code and executions involved in the build process are automated, and fully public and transparent.
 
 # Credits
 
@@ -124,3 +122,5 @@ For complete transparency, the Docker images are publicly built in <a href="http
 Stay Coti. ️‍🔥
 
 If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
+
+<p align="center"><a href="https://twitter.com/tomjwells" target="_blank"><img src="https://cdn.discordapp.com/avatars/343604221331111946/65130831872c9daabdb0d803ce27e594.webp?size=240"></a></p>
