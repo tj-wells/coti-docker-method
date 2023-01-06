@@ -1,4 +1,4 @@
-# COTI Node Docker Installation Method
+# Coti Node Docker Installation Method
 
 Purpose: Provide an easy method to install, upgrade and maintain Coti nodes, with automatic SSL certification, using Docker containers.
 
@@ -95,7 +95,7 @@ Your node version can be updated by following the following steps:
 
 # How are the Docker images built?
 
-Since official Docker images of the Coti node are currently unavailable, I have set up a separate repository to generate the images.
+Since official Docker images are not being produced by Coti, I have set up a separate repository to generate the images.
 
 For complete transparency, the Docker images are built in public in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>, to ensure that the Dockermages are fully open-source. All of the code and executions involved in the build process are automated, and fully public and transparent.
 
@@ -108,12 +108,12 @@ Below is a list of common errors/problems that have been encountered when settin
     To get the SSL certificates installed, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine. The precise steps for this will vary depending on your VPS provider.
 
 * My node repeatedly reconnects to the network
-  - COTI's node manager performs health status checks on your node using port 7070.
+  - Coti's node manager performs health status checks on your node using port 7070.
   - To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP addresses
     - "52.59.142.53" for testnet nodes,
     - "35.157.47.86" for mainnet nodes.
 
-If none of the information above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, ask in the node-operators channel in the [COTI Discord server](https://discord.com/invite/wfAQfbc3Df).
+If none of the information above helps, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's valuable <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or to get help from the community, pop a question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # Credits
 
