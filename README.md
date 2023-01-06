@@ -55,8 +55,8 @@ EMAIL="<Your email address>"
 where,
 
 - ACTION is set to either of the values "testnet" or "mainnet", depending on your use-case.
-- SERVERNAME is your desired testnet URL is in the form "testnet.my-node.com", i.e. including subdomains where applicable, and without 'http(s)://' and 'www.').
-- VERSION should be in the format "X.Y.Z", for example, "3.1.2". See the list below for the versions currently available for installation.
+- SERVERNAME is your desired testnet URL is in the form "testnet.my-node.com", i.e., including subdomains where applicable, and without 'http(s)://' and 'www.'.
+- VERSION should be in the format "X.Y.Z", where X, Y and Z are digits, for example, "3.1.2". See the list below for the versions currently available for installation.
 
 An example .env file, `.env.sample`, is provided in the repository. You may copy it to start from a valid template file: `cp .env.sample .env`.
 
