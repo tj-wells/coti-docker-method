@@ -8,11 +8,11 @@ Purpose: Provide an easy method to install, upgrade and maintain Coti nodes, wit
 
 This method requires that you have docker and docker-compose installed.
 
-I have provided instructions for Ubuntu 22.04 LTS, but for other OSs you'll have to search on the internet.
+Instructions for Ubuntu 22.04 LTS are given below, for other OSs you'll have to search for isntructions yourself.
 
 <details>
     <summary>Docker and docker-compose instructions for Ubuntu 22.04 LTS</summary>
-    If you are working on Ubuntu 22.04, I suggest installing with the following commands:
+    If you are working on Ubuntu 22.04, I found the following commands useful:
 
 ```
 # Install docker
