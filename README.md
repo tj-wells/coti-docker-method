@@ -56,7 +56,10 @@ where,
 
 - ACTION is set to either of the values "testnet" or "mainnet", depending on your use-case.
 - SERVERNAME is your desired testnet URL is in the form "testnet.my-node.com", i.e., including subdomains where applicable, and without 'http(s)://' and 'www.'.
+- PKEY is your private key. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on obtaining your private key.)
+- SEED is your wallet's seed. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on generating a seed for your wallet.)
 - VERSION should be in the format "X.Y.Z", where X, Y and Z are digits, for example, "3.1.2". See the list below for the versions currently available for installation.
+- EMAIL is the email address associated with your node.
 
 An example .env file, `.env.sample`, is provided in the repository. You may copy it to start from a valid template file: `cp .env.sample .env`.
 
