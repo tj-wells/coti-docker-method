@@ -68,6 +68,7 @@ An example .env file, `.env.sample`, is provided in the repository. You may copy
 Available Coti Node Versions:
 
 <ul>
+  <li>3.1.3</li>
   <li>3.1.2</li>
 </ul>
 
@@ -91,9 +92,8 @@ Depending on your OS and version of docker-compose, the `docker-compose` syntax 
 
 Your node version can be updated by following the following steps:
 
-1. Check that the version you would like to update to is listed in the section [Available Versions](#available-versions)
-2. Update the new version number in your .env file
-3. Run `docker-compose up -d` to download and run the new version
+1. Update the new version number in your .env file
+2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
 
 # How are the Docker images built?
 
