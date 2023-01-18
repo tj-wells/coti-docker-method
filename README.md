@@ -99,7 +99,7 @@ Your node version can be updated by following the following steps:
 
 Since official Docker images are not being produced by Coti, I have set up a separate repository to generate the images.
 
-For complete transparency, the Docker images are built in public in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this container repository</a>, to ensure that the Dockermages are fully open-source. All of the code and executions involved in the build process are automated, and fully public and transparent.
+To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are automated, fully transparent, and can be viewed in the github repository linked above.
 
 # Debugging
 
