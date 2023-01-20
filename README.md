@@ -41,7 +41,7 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 
 ## 3. Define your Environment
 
-The `.env` file defines the environment variables of the Docker container, and should be specified in the format
+The `.env` file defines the environment variables needed for the Coti node to run. These should be specified in the format
 
 ```.env
 ACTION="<testnet or mainnet>"
