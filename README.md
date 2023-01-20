@@ -74,13 +74,13 @@ Available Coti Node Versions:
 
 # Running Your Node
 
-The node can be run in the foreground with
+The node can be run in the foreground, which lets you see the logs, with
 
 ```
 docker-compose up
 ```
 
-This lets you check the logs and make sure the node is configured correctly. Once you are confident your node is running correctly, the containers can be run in the background with
+Once you are confident your node is running correctly, you can safely close the terminal window, which leaves the Docker process running. Alternatively, the containers can be run in the background with
 
 ```
 docker-compose up -d
@@ -90,7 +90,7 @@ Depending on your OS and version of docker-compose, the `docker-compose` syntax 
 
 # Upgrading Your Node Version
 
-Your node version can be updated by following the following steps:
+Upgrading your Coti node version is easy using Docker, and can be done in the following two steps:
 
 1. Update the new version number in your .env file
 2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
