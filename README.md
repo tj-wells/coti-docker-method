@@ -127,7 +127,7 @@ If none of the information above helps, you can ask me (<a href="https://twitter
 
 Stay Coti. ️‍🔥
 
-If you have questions, I hang out a lot on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
+If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
 <br />
 <br />
 <br />
