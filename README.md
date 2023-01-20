@@ -61,7 +61,7 @@ where,
 - VERSION should be in the format "X.Y.Z", where X, Y and Z are digits, for example, "3.1.2". See the list below for the versions currently available for installation.
 - EMAIL is the email address associated with your node.
 
-An example .env file, `.env.sample`, is provided in the repository. You may copy it to start from a valid template file: `cp .env.sample .env`.
+An example .env file, <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">.env.sample</a>, is provided in the repository. You may copy it to start from a valid template file: `cp .env.sample .env`.
 
 ### Available Node Versions
 
