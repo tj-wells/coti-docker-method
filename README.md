@@ -37,13 +37,13 @@ docker compose version
 
 # Installation Instructions
 
-## 2. Clone the Repository
+## 1. Clone the Repository
 
 ```
 git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 ```
 
-## 3. Define your Environment
+## 2. Define your Environment
 
 The `.env` file defines the environment variables needed to run the Coti node. These should be specified in the format
 
@@ -52,7 +52,6 @@ ACTION="<testnet or mainnet>"
 SERVERNAME="<Your desired testnet URL>"
 PKEY="<Your private key>"
 SEED="<Your seed key>"
-VERSION="X.Y.Z"
 EMAIL="<Your email address>"
 ```
 
