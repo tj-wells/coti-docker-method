@@ -58,7 +58,7 @@ EMAIL="<Your email address>"
 where,
 
 - ACTION is set to either of the values "testnet" or "mainnet", depending on your use-case.
-- SERVERNAME is your desired testnet URL is in the form "testnet.my-node.com", i.e., including subdomains where applicable, and without 'http(s)://' and 'www.'.
+- SERVERNAME is your node's URL in the form "testnet.my-node.com", i.e., including subdomains where applicable, and excluding 'http(s)://' and 'www.'.
 - PKEY is your private key. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on obtaining your private key.)
 - SEED is your wallet's seed. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on generating a seed for your wallet.)
 - EMAIL is the email address associated with your node.
