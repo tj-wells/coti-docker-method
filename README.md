@@ -91,7 +91,7 @@ Can I fix a specific version of my node?
 
 ## Upgrading Manually
 
-The Coti node can be upgraded manually in two steps:
+Manual upgrades can be performed as follows:
 
 1. Update the new version number in your .env file
 2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
