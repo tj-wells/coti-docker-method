@@ -1,9 +1,21 @@
 version: '3'
 
 services:
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WATCHTOWER_POLL_INTERVAL: 120
+      WATCHTOWER_CLEANUP: true
+      WATCHTOWER_LABEL_ENABLE: true
+      WATCHTOWER_INCLUDE_RESTARTING: true
+      WATCHTOWER_WARN_ON_HEAD_FAILURE: never
+
   coti-node:
-    image: 'atomnode/coti-node:${VERSION}'
-    command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-${VERSION}.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
+    image: 'atomnode/coti-node:${VERSION:-latest}'
+    command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-*.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
     ports:
       - '7070:7070'
     expose:
@@ -14,6 +26,8 @@ services:
       - .env
     volumes:
       - './data:/app/data'
+      - 'Clusterstamp:/app/data/FullNode1_clusterstamp.csv'
+      - 'FullNoderocksDB1:/app/data/FullNoderocksDB1'
     environment:
       VIRTUAL_HOST: ${SERVERNAME}
       VIRTUAL_PORT: 7070
@@ -27,6 +41,8 @@ services:
         limits:
           cpus: '0.9'
           memory: 8G
+    labels:
+      - 'com.centurylinklabs.watchtower.enable=true'
 
   nginx:
     image: nginx
@@ -77,3 +93,5 @@ volumes:
   vhost:
   html:
   certs:
+  Clusterstamp:
+  FullNoderocksDB1:
