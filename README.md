@@ -74,7 +74,7 @@ Healthy startup logs should eventually look like this:
 
 Healthy steady state logs should look like this:
 
-<p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066399682743505036/Healthy_steady_state_logs.png?width=1920&height=676"></p>
+<p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066399682743505036/Healthy_steady_state_logs.png"></p>
 </details>
 <br />
 Once you are confident your node is running correctly, you can safely close the terminal window. Ctrl+C will stop the container, so the simplest way I have found to detach from docker-compose is to close the terminal window.
