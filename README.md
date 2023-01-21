@@ -2,9 +2,9 @@
 
 Purpose: Provide an easy method to install, upgrade and maintain Coti nodes, using Docker containers.
 
-This method also sets up the following useful functionality:
-  - Automatic SSL certification and renewal
-	- Automatic update
+This method also provides:
+- Automatic SSL certification and renewal
+- Automatic update to the latest Coti node version
 
 # Prerequisites
 
