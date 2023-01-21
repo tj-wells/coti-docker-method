@@ -1,6 +1,6 @@
 # Coti Node Docker Installation Method
 
-Purpose: Provide an easy method to install, upgrade and maintain Coti nodes, using Docker containers.
+Purpose: Provide an easy method to install, upgrade and maintain Coti nodes.
 
 This method also provides:
 - Automatic SSL certification and renewal
