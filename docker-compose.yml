@@ -2,6 +2,7 @@ version: '3'
 
 services:
   watchtower:
+    container_name: watchtower
     image: containrrr/watchtower
     restart: unless-stopped
     volumes:
@@ -14,6 +15,7 @@ services:
       WATCHTOWER_WARN_ON_HEAD_FAILURE: never
 
   coti-node:
+    container_name: coti-node
     image: 'atomnode/coti-node:${VERSION:-latest}'
     command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-*.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
     ports:
