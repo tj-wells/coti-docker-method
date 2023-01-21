@@ -71,9 +71,17 @@ Once you are confident your node is running correctly, you can safely close the 
 docker-compose up -d
 ```
 
-Healthy starting logs should look like this:
+<details>
+    <summary>Click to view examples healthy node logs</summary>
+
+Healthy startup logs should look like this:
+
+<p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066373633020272640/Healthy_starting_logs.png"></p>
 
 Healthy steady state logs should look like this:
+
+<p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066373657443700736/Screenshot_2023-01-21_at_15.04.33.png?width=1440&height=572"></p>
+</details>
 
 # Automatic Updates
 
