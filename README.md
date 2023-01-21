@@ -90,7 +90,7 @@ Can I fix a specific version of my node?
 * Yes. To do so, specify the version you would like to set in the `.env` file.
   - For example, to fix the version 3.1.3, add the line `VERSION="3.1.3"` to your .env file.
 
-## Upgrading Your Node Version Manually
+## Upgrading Manually
 
 The Coti node can be upgraded manually in two steps:
 
