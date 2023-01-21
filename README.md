@@ -87,8 +87,8 @@ Depending on your OS and version of docker-compose, the `docker-compose` syntax 
 This method configures a service called watchtower, which checks for new versions of the Coti software, and performs the update for you.
 
 Can I fix a specific version of my node?
-	* Yes. To do so, specify the version you would like to set in the `.env` file.
-	  - For example, to fix the version 3.1.3, add the line `VERSION="3.1.3"` to your .env file.
+* Yes. To do so, specify the version you would like to set in the `.env` file.
+  - For example, to fix the version 3.1.3, add the line `VERSION="3.1.3"` to your .env file.
 
 ## Upgrading Your Node Version Manually
 
