@@ -4,7 +4,7 @@ Purpose: Provide an easy method to install, upgrade and maintain Coti nodes usin
 
 This method also provides:
 
-- Automatic SSL certification and renewal
+- Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
 # Prerequisites
@@ -52,7 +52,7 @@ EMAIL="<Your email address>"
 where,
 
 - `ACTION` is set to either "testnet" or "mainnet", depending on your use-case.
-- `SERVERNAME` is your node's URL in the form "testnet.my-node.com", i.e., including subdomains (where applicable), and excluding 'http(s)://' and 'www.'.
+- `SERVERNAME` is your node's URL in the form "testnet.my-node.com", i.e., including subdomains (where applicable), and excluding "http(s)://" and "www.".
 - `PKEY` is your private key. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on obtaining your private key.)
 - `SEED` is your wallet's seed. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on generating a seed for your wallet.)
 - `EMAIL` is the email address associated with your node.
@@ -65,14 +65,10 @@ The node can be run in the foreground, which lets you see the logs, with
 docker-compose up
 ```
 
-Once you are confident your node is running correctly, you can safely close the terminal window, which leaves the Docker process running. Alternatively, the containers can be run in the background with
-
-```
-docker-compose up -d
-```
+Once you are confident your node is running correctly, you can safely close the terminal window, which leaves the Docker process running.
 
 <details>
-    <summary>Click to view examples healthy node logs</summary>
+    <summary>Click to view examples of healthy node logs</summary>
 
 Healthy startup logs should look like this:
 
@@ -82,14 +78,22 @@ Healthy steady state logs should look like this:
 
 <p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066373657443700736/Screenshot_2023-01-21_at_15.04.33.png?width=1440&height=572"></p>
 </details>
+<br />
+Alternatively, the containers can be run in the background with
+
+```
+docker-compose up -d
+```
 
 # Automatic Updates
 
-By default, this method configures a service, which checks for new versions of the Coti software, and performs the update for you.
+By default, this method sets up automatic updates, so that your node stays up to date when <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> new software.
 
-A specific version for your node can be chosen by setting the `VERSION` variable in the `.env` file.
+If you want to bypass the automatic updates, you can do so by specifying the version of the node you would like to run. This is done by defining the `VERSION` variable in the `.env` file.
 
-- For example, to fix the version at 3.1.3, add the line `VERSION="3.1.3"` to your .env file.
+- For example, to run version 3.1.3 of the Coti node, add the line `VERSION="3.1.3"` into your .env file.
+
+Please check the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a> for a list of the available versions.
 
 ## Upgrading Manually
 
@@ -97,8 +101,6 @@ Manual upgrades can be performed as follows:
 
 1. Update the new `VERSION` number in your `.env` file
 2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
-
-Please check the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a> for a list of the available versions.
 
 # Debugging
 
@@ -124,7 +126,7 @@ If you encounter issues not in this list, you can ask me (<a href="https://twitt
 
 # How are the Docker images built?
 
-A separate repository builds the container images which are intended for use by the community.
+A separate repository builds the container images, which are intended for use by the community.
 
 To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are fully automated, transparent, and can be inspected in the github repository linked above.
 
