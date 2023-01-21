@@ -65,24 +65,31 @@ The node can be run in the foreground, which lets you see the logs, with
 docker-compose up
 ```
 
-Once you are confident your node is running correctly, you can safely close the terminal window, which leaves the Docker process running.
-
 <details>
     <summary>Click to view examples of healthy node logs</summary>
 
-Healthy startup logs should look like this:
+Healthy startup logs should eventually look like this:
 
 <p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066373633020272640/Healthy_starting_logs.png"></p>
 
 Healthy steady state logs should look like this:
 
-<p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066373657443700736/Screenshot_2023-01-21_at_15.04.33.png?width=1440&height=572"></p>
+<p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066399682743505036/Healthy_steady_state_logs.png?width=1920&height=676"></p>
 </details>
+<br />
+Once you are confident your node is running correctly, you can safely close the terminal window. Ctrl+C will stop the container, so the simplest way I have found to detach from docker-compose is to close the terminal window.
+<br />
 <br />
 Alternatively, the containers can be run in the background with
 
 ```
 docker-compose up -d
+```
+
+If you are not attached to the container, and would like to follow the logs without restarting the container, you can do so with
+
+```
+docker-compose logs --follow
 ```
 
 # Automatic Updates
