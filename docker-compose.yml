@@ -28,8 +28,7 @@ services:
       - .env
     volumes:
       - './data:/app/data'
-      - 'Clusterstamp:/app/data/FullNode1_clusterstamp.csv'
-      - 'FullNoderocksDB1:/app/data/FullNoderocksDB1'
+      - './rocksdb:/app/FullNoderocksDB1'
     environment:
       VIRTUAL_HOST: ${SERVERNAME}
       VIRTUAL_PORT: 7070
@@ -95,5 +94,3 @@ volumes:
   vhost:
   html:
   certs:
-  Clusterstamp:
-  FullNoderocksDB1:
