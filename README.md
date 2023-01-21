@@ -4,7 +4,7 @@ Purpose: Provide an easy method to install, upgrade and maintain Coti nodes, usi
 
 This method also provides:
 - Automatic SSL certification and renewal
-- Automatic update to the latest Coti node version
+- Automatic upgrades to the latest Coti node version
 
 # Prerequisites
 
