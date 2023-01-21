@@ -92,23 +92,6 @@ If you are not attached to the container, and would like to follow the logs with
 docker-compose logs --follow
 ```
 
-# Automatic Updates
-
-By default, this method sets up automatic updates, so that your node stays up to date when <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> new software.
-
-If you want to bypass the automatic updates, you can do so by specifying the version of the node you would like to run. This is done by defining the `VERSION` variable in the `.env` file.
-
-- For example, to run version 3.1.3 of the Coti node, add the line `VERSION="3.1.3"` into your .env file.
-
-Please check the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a> for a list of the available versions.
-
-## Upgrading Manually
-
-Manual upgrades can be performed as follows:
-
-1. Update the new `VERSION` number in your `.env` file
-2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
-
 # Debugging
 
 Below is a list of common errors/problems that have been encountered when setting up the node software, and their solutions.
@@ -124,6 +107,23 @@ Below is a list of common errors/problems that have been encountered when settin
     - "35.157.47.86" for mainnet nodes.
 
 If you encounter issues not in this list, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's valuable <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
+
+# Automatic/Manual Updates
+
+By default, this method sets up automatic updates, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
+
+If you want to bypass the automatic updates, you can do so by specifying the version of the node you would like to run. This is done by defining the `VERSION` variable in the `.env` file.
+
+- For example, to run version 3.1.3 of the Coti node, add the line `VERSION="3.1.3"` into your `.env` file.
+
+Please check the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a> for a list of the available versions.
+
+## Upgrading Manually
+
+Manual upgrades can be performed as follows:
+
+1. Update the new `VERSION` number in your `.env` file
+2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
 
 # Credits
 
