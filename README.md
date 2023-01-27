@@ -13,7 +13,7 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
-# ⚡ Installation Instructions
+# Installation Instructions
 
 This method relies on docker and docker-compose. Expand the instructions below to install these on your system.
 
@@ -51,7 +51,6 @@ SERVERNAME="<Your desired testnet URL>"
 PKEY="<Your private key>"
 SEED="<Your seed key>"
 EMAIL="<Your email address>"
-# VERSION="X.Y.Z" # Optional
 ```
 
 where,
@@ -61,17 +60,24 @@ where,
 - `PKEY` is your private key. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on obtaining your private key.)
 - `SEED` is your wallet's seed. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on generating a seed for your wallet.)
 - `EMAIL` is the email address associated with your node.
-- `VERSION` is the version number of the coti-node you would like to run. Note, that leaving this unspecified will automatically use the latest version that is available and provide automatic updates.
+
+### Optional Variables
+
+An additional variable `VERSION` may be specified in the `.env` file, if you want to run your node on a specific version and disable automatic updates.
+
+```.env
+VERSION="X.Y.Z"
+```
 
 # 🏃 Running Your Node
 
-The node can be run in the foreground, which lets you see the logs, with
+I recommend running the node in the foreground initially, which lets you check the logs. To do this, run
 
 ```
 docker-compose up
 ```
 
-Check that your logs look healthy, and use the dropdown below to compare with if you have any doubts.
+Make sure your logs look healthy, and use the dropdown below to compare with if you have any doubts.
 
 <details>
     <summary>Click to view examples of healthy node logs</summary>
@@ -106,27 +112,33 @@ Below is a list of common errors/problems that have been encountered when settin
 
 <details>
     <summary>`Timeout during connect (likely firewall problem)`</summary>
+
+<br/>
 For the SSL verification to work, your server needs to be able to accept incoming connections from the internet on ports 80 and 443.
+<br/>
     To get the SSL certificates installed, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine. The precise steps for this will vary depending on your VPS provider.
+<br/>
+<br/>
 
 </details>
 
 <details>
     <summary>My node repeatedly reconnects to the network</summary>
-  - Coti's node manager performs health status checks on your node using port 7070.
-  - To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP addresses
-    - "52.59.142.53" for testnet nodes,
-    - "35.157.47.86" for mainnet nodes.
-
+    Coti's node manager performs health status checks on your node using port 7070.<br/>
+    To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP addresses:
+    <ul>
+    <li>"52.59.142.53" for testnet nodes,</li>
+    <li>"35.157.47.86" for mainnet nodes.</li>
+    </ul>
 </details>
 
 If you encounter issues not in this list, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # Automatic/Manual Updates
 
-By default, this setup performs updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
+Unless you have specified a version number, this setup performs updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
 
-If you want to bypass the automatic updates, you can do so by specifying the version of the node you would like to run. This is done by defining the `VERSION` variable in the `.env` file.
+If you want to bypass the automatic updates, you can do so by specifying the `VERSION` variable in the `.env` file.
 
 - For example, to run version 3.1.3 of the Coti node, add the line `VERSION="3.1.3"` into your `.env` file.
 
