@@ -44,6 +44,11 @@ services:
           memory: 8G
     labels:
       - 'com.centurylinklabs.watchtower.enable=true'
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: 5
+        max-size: 50m
 
   nginx:
     image: nginx
@@ -58,6 +63,11 @@ services:
       - certs:/etc/nginx/certs
     labels:
       - 'com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true'
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: 5
+        max-size: 50m
 
   dockergen:
     image: jwilder/docker-gen

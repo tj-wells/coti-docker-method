@@ -2,15 +2,11 @@
 <p align="center">An easy method to install, upgrade and maintain Coti nodes using Docker.</p>
 
 <p align="center">
-	<a href="https://github.com/nastyox/Rando.js#nastyox"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tj-wells/coti-node"></a>
-    <a href="https://twitter.com/intent/tweet?text=Ditch%20all%20that%20convoluted%20%22Math.random()%22%20code.%20Rando.js%20makes%20picking%20a%20number%201-100%20as%20simple%20as%20%22rando(1,%20100)%22,%20and%20it%20can%20do%20way%20more%20just%20as%20easily-%20at%20a%20cryptographically%20strong%20level.&url=https://github.com/nastyox/Rando.js&hashtags=javascript,opensource,js,webdev,developers"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
+	<a href="https://github.com/tj-wells/coti-node"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tj-wells/coti-node"></a>
+    <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftj-wells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
 </p><br/>
 
-<p align="center"><a href="https://github.com/nastyox/Rando.js#nastyox"><img src="https://s9.gifyu.com/images/Untitledc87dd8e2292fe4fa.gif" width="100%" /></a></p><br/>
-
-# Coti Node Docker Installation Method
-
-Purpose: Provide an easy method to install, upgrade and maintain Coti nodes using Docker.
+<p align="center"><a href="https://github.com/tj-wells/coti-node"><img src="https://s9.gifyu.com/images/coti-node-demo-clipped_censored_h264.gif" width="100%" /></a></p><br/>
 
 This method also provides:
 
@@ -19,7 +15,7 @@ This method also provides:
 
 # ⚡ Installation Instructions
 
-Make sure docker and docker-compose are available on your system before starting.
+This method relies on docker and docker-compose. Expand the instructions below to install these on your system.
 
 <details>
     <summary>Installation Instructions for Docker and docker-compose (on most Linux Operating Systems)</summary>
