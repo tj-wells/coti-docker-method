@@ -6,7 +6,7 @@
     <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftj-wells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
 </p><br/>
 
-<p align="center"><a href="https://github.com/tj-wells/coti-node"><img src="https://s9.gifyu.com/images/coti-node-demo-clipped_censored_h264.gif" width="100%" /></a></p><br/>
+<!-- <p align="center"><a href="https://github.com/tj-wells/coti-node"><img src="https://s9.gifyu.com/images/coti-node-demo-clipped_censored_h264.gif" width="100%" /></a></p><br/> -->
 
 This method also provides:
 
