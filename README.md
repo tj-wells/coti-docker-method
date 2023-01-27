@@ -1,3 +1,13 @@
+<h1 align="center">Coti Docker Installation Method</h1>
+<p align="center">An easy method to install, upgrade and maintain Coti nodes using Docker.</p>
+
+<p align="center">
+	<a href="https://github.com/nastyox/Rando.js#nastyox"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tj-wells/coti-node"></a>
+    <a href="https://twitter.com/intent/tweet?text=Ditch%20all%20that%20convoluted%20%22Math.random()%22%20code.%20Rando.js%20makes%20picking%20a%20number%201-100%20as%20simple%20as%20%22rando(1,%20100)%22,%20and%20it%20can%20do%20way%20more%20just%20as%20easily-%20at%20a%20cryptographically%20strong%20level.&url=https://github.com/nastyox/Rando.js&hashtags=javascript,opensource,js,webdev,developers"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
+</p><br/>
+
+<p align="center"><a href="https://github.com/nastyox/Rando.js#nastyox"><img src="https://s9.gifyu.com/images/Untitledc87dd8e2292fe4fa.gif" width="100%" /></a></p><br/>
+
 # Coti Node Docker Installation Method
 
 Purpose: Provide an easy method to install, upgrade and maintain Coti nodes using Docker.
@@ -7,12 +17,12 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
-# Prerequisites
+# ⚡ Installation Instructions
 
-This method needs docker and docker-compose to be installed.
+Make sure docker and docker-compose are available on your system before starting.
 
 <details>
-    <summary>Installation Instructions for Docker and docker-compose on most Linux Operating Systems</summary>
+    <summary>Installation Instructions for Docker and docker-compose (on most Linux Operating Systems)</summary>
 
 ```
 sudo su
@@ -28,8 +38,6 @@ docker-compose --version
 ```
 
 </details>
-
-# Installation Instructions
 
 ## 1. Clone the Repository
 
@@ -47,6 +55,7 @@ SERVERNAME="<Your desired testnet URL>"
 PKEY="<Your private key>"
 SEED="<Your seed key>"
 EMAIL="<Your email address>"
+# VERSION="X.Y.Z" # Optional
 ```
 
 where,
@@ -56,14 +65,17 @@ where,
 - `PKEY` is your private key. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on obtaining your private key.)
 - `SEED` is your wallet's seed. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on generating a seed for your wallet.)
 - `EMAIL` is the email address associated with your node.
+- `VERSION` is the version number of the coti-node you would like to run. Note, that leaving this unspecified will automatically use the latest version that is available and provide automatic updates.
 
-# Running Your Node
+# 🏃 Running Your Node
 
 The node can be run in the foreground, which lets you see the logs, with
 
 ```
 docker-compose up
 ```
+
+Check that your logs look healthy, and use the dropdown below to compare with if you have any doubts.
 
 <details>
     <summary>Click to view examples of healthy node logs</summary>
@@ -92,25 +104,31 @@ If you are not attached to the container, and would like to follow the logs with
 docker-compose logs --follow
 ```
 
-# Debugging
+# 🧑‍💻 Debugging
 
 Below is a list of common errors/problems that have been encountered when setting up the node software, and their solutions.
 
-- `Timeout during connect (likely firewall problem)`
-  - For the SSL verification to work, your server needs to be able to accept incoming connections from the internet on ports 80 and 443.
+<details>
+    <summary>`Timeout during connect (likely firewall problem)`</summary>
+For the SSL verification to work, your server needs to be able to accept incoming connections from the internet on ports 80 and 443.
     To get the SSL certificates installed, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine. The precise steps for this will vary depending on your VPS provider.
 
-* My node repeatedly reconnects to the network
+</details>
+
+<details>
+    <summary>My node repeatedly reconnects to the network</summary>
   - Coti's node manager performs health status checks on your node using port 7070.
   - To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP addresses
     - "52.59.142.53" for testnet nodes,
     - "35.157.47.86" for mainnet nodes.
 
-If you encounter issues not in this list, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's valuable <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
+</details>
+
+If you encounter issues not in this list, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
 
 # Automatic/Manual Updates
 
-By default, this method sets up automatic updates, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
+By default, this setup performs updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
 
 If you want to bypass the automatic updates, you can do so by specifying the version of the node you would like to run. This is done by defining the `VERSION` variable in the `.env` file.
 
@@ -125,7 +143,7 @@ Manual upgrades can be performed as follows:
 1. Update the new `VERSION` number in your `.env` file
 2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
 
-# Credits
+# ✨ Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
 - Thanks to GeordieR, whose scripts assisted in developing this installation method using Docker.
@@ -140,6 +158,9 @@ To ensure that the images are produced in a fully transparent and open-source wa
 # STAY COTI
 
 Stay Coti. ️‍🔥
+<br />
+<br />
+<br />
 
 If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
 <br />
