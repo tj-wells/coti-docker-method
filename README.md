@@ -1,4 +1,4 @@
-<h1 align="center">Coti Docker Installation Method</h1>
+<h1 align="center">Coti Node Docker Installation Method</h1>
 <p align="center">An easy method to install, upgrade and maintain Coti nodes using Docker.</p>
 
 <p align="center">
@@ -15,7 +15,7 @@ This method also provides:
 
 # Installation Instructions
 
-This method relies on docker and docker-compose. Expand the instructions below to install these on your system.
+This method relies on docker and docker-compose. To install these, expand the instructions below.
 
 <details>
     <summary>Installation Instructions for Docker and docker-compose (on most Linux Operating Systems)</summary>
@@ -26,7 +26,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/
 ```
 
-Check if your installations were successful with
+Run the following commands to check if your installations were successful
 
 ```
 docker --version
@@ -41,9 +41,9 @@ docker-compose --version
 git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 ```
 
-## 2. Define your Environment Variables
+## 2. Create a `.env` File
 
-The `.env` file defines the environment variables needed to run the Coti node. Start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`. Environment variables should be specified in the format
+The `.env` file defines the environment variables used to start the Coti node. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`. Environment variables should be specified in the format
 
 ```.env
 ACTION="<testnet or mainnet>"
@@ -63,7 +63,7 @@ where,
 
 ### Optional Variables
 
-An additional variable `VERSION` may be specified in the `.env` file, if you want to run your node on a specific version and disable automatic updates.
+An optional variable `VERSION` may be added to the `.env` file, if you want to run your node on a specific version and disable automatic updates.
 
 ```.env
 VERSION="X.Y.Z"
@@ -71,13 +71,13 @@ VERSION="X.Y.Z"
 
 # 🏃 Running Your Node
 
-I recommend running the node in the foreground initially, which lets you check the logs. To do this, run
+Running the node in the foreground initially, will let you check the logs. To do this, run
 
 ```
 docker-compose up
 ```
 
-Make sure your logs look healthy, and use the dropdown below to compare with if you have any doubts.
+Make sure your logs look healthy, and compare your logs with the screenshots in the dropdown below if you have any doubts.
 
 <details>
     <summary>Click to view examples of healthy node logs</summary>
@@ -123,7 +123,7 @@ For the SSL verification to work, your server needs to be able to accept incomin
 </details>
 
 <details>
-    <summary>My node repeatedly reconnects to the network</summary>
+    <summary>My node is repeatedly reconnecting to the network</summary>
     Coti's node manager performs health status checks on your node using port 7070.<br/>
     To allow the node manager to connect to your node, ensure that port 7070 is accessible from the IP addresses:
     <ul>
@@ -136,11 +136,11 @@ If you encounter issues not in this list, you can ask me (<a href="https://twitt
 
 # Automatic/Manual Updates
 
-Unless you have specified a version number, this setup performs updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
+Unless you have specified a version number, this setup will perform updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
 
 If you want to bypass the automatic updates, you can do so by specifying the `VERSION` variable in the `.env` file.
 
-- For example, to run version 3.1.3 of the Coti node, add the line `VERSION="3.1.3"` into your `.env` file.
+- For example, if you wanted run version 3.1.3 of the Coti node, you can add the line `VERSION="3.1.3"` into your `.env` file.
 
 Please check the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a> for a list of the available versions.
 
@@ -154,7 +154,7 @@ Manual upgrades can be performed as follows:
 # ✨ Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
-- Thanks to GeordieR, whose scripts assisted in developing this installation method using Docker.
+- Thanks to <a href="https://github.com/Geordie-R" target="_blank">GeordieR</a>, whose scripts assisted in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
 # How are the Docker images built?
