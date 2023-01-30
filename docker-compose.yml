@@ -97,6 +97,7 @@ services:
       - vhost:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - certs:/etc/nginx/certs
+      - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
 volumes:
@@ -104,3 +105,4 @@ volumes:
   vhost:
   html:
   certs:
+  acme:
