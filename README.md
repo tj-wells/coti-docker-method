@@ -43,7 +43,7 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 
 ## 2. Create a `.env` File
 
-The `.env` file defines the environment variables used to start the Coti node. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`. Environment variables should be specified in the format
+The `.env` file defines the environment variables used to configure the Coti node. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`. Environment variables should be specified in the format
 
 ```.env
 ACTION="<testnet or mainnet>"
