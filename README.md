@@ -71,13 +71,21 @@ VERSION="X.Y.Z"
 
 # 🏃 Running Your Node
 
-Running the node in the foreground initially, will let you check the logs. To do this, run
+First, create a network called "gateway". This helps docker with routing requests.
+
+```
+docker network create --driver=bridge --attachable --internal=false gateway
+```
+
+This command only needs be run once. You can check it has been created by running `docker network ls`.
+
+To watch the logs of your node, you should run your node in the foreground. To do this, run
 
 ```
 docker-compose up
 ```
 
-Make sure your logs look healthy, and compare your logs with the screenshots in the dropdown below if you have any doubts.
+Make sure your logs look healthy, and compare your logs with the screenshots in the dropdown below if you have doubts.
 
 <details>
     <summary>Click to view examples of healthy node logs</summary>

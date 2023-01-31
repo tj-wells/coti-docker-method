@@ -27,7 +27,7 @@ services:
     #   done"
     # command: tail -F anything
     ports:
-      - '7070:80'
+      - '7070:7070'
     expose:
       - 7070
     restart: on-failure
@@ -43,19 +43,19 @@ services:
           memory: 8G
     labels:
       # SSL redirect requires a separate router (https://github.com/containous/traefik/issues/4688#issuecomment-477800500)
-      - 'traefik.http.routers.some-name.entryPoints=port7070'
-      - 'traefik.http.routers.some-name.rule=host(`${SERVERNAME}`)'
-      - 'traefik.http.middlewares.some-name-redirect.redirectScheme.scheme=https'
-      - 'traefik.http.middlewares.some-name-redirect.redirectScheme.permanent=true'
-      - 'traefik.http.routers.some-name.middlewares=some-name-redirect'
+      - 'traefik.http.routers.coti-node.entryPoints=port7070'
+      - 'traefik.http.routers.coti-node.rule=host(`${SERVERNAME}`)'
+      - 'traefik.http.middlewares.coti-node-redirect.redirectScheme.scheme=https'
+      - 'traefik.http.middlewares.coti-node-redirect.redirectScheme.permanent=true'
+      - 'traefik.http.routers.coti-node.middlewares=coti-node-redirect'
       # SSL endpoint
       - 'traefik.http.routers.coti-node-ssl.entryPoints=port443'
       - 'traefik.http.routers.coti-node-ssl.rule=host(`${SERVERNAME}`)'
       - 'traefik.http.routers.coti-node-ssl.tls=true'
       - 'traefik.http.routers.coti-node-ssl.tls.certResolver=le-ssl'
       - 'traefik.http.routers.coti-node-ssl.service=coti-node-ssl'
-      - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80'
-      # - "traefik.http.services.coti-node-ssl.loadBalancer.server.port=7070"
+      # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80'
+      - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=7070'
 
   traefik:
     container_name: traefik
@@ -63,10 +63,8 @@ services:
     ports:
       - '80:80'
       - '443:443'
-      # - "7070:7070"
     command:
       # - "--log.level=DEBUG"
-      #- "--api=true"
       - '--providers.docker=true'
       - '--global.sendAnonymousUsage=false'
 
@@ -85,8 +83,9 @@ services:
 
 networks:
   default:
-    external:
-      name: gateway
+    name: gateway
+    external: true
+    driver: bridge
 
 volumes:
   coti_config:
