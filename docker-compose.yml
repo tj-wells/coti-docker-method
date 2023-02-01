@@ -3,7 +3,7 @@ version: '3'
 services:
   watchtower:
     container_name: watchtower
-    image: containrrr/watchtower
+    image: containrrr/watchtower:1.5.3
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -35,7 +35,7 @@ services:
       - .env
     volumes:
       - 'coti_config:/app/data'
-      - 'rocksdb:/app/FullNoderocksDB1'
+      - 'coti_db:/app/FullNoderocksDB1'
     deploy:
       resources:
         limits:
@@ -64,9 +64,17 @@ services:
       - '80:80'
       - '443:443'
     command:
-      # - "--log.level=DEBUG"
-      - '--providers.docker=true'
       - '--global.sendAnonymousUsage=false'
+      - '--log.level=DEBUG'
+      - '--api' # Enables the dashboard
+      - '--metrics'
+      - '--metrics.prometheus=true'
+      - '--metrics.prometheus.buckets=0.1,0.3,1.2,5.0'
+      # - '--docker'
+      - '--providers.docker=true'
+      # - '--docker.swarmMode'
+      # - '--docker.domain=docker.localhost'
+      - '--providers.docker.watch'
 
       - '--entryPoints.port443.address=:443'
       - '--entryPoints.port80.address=:80'
@@ -89,5 +97,5 @@ networks:
 
 volumes:
   coti_config:
-  rocksdb:
+  coti_db:
   letsencrypt:
