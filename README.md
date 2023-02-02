@@ -14,6 +14,8 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
+Watch me launch my node below:
+
 <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
 # Installation Instructions
@@ -72,9 +74,9 @@ An optional variable `VERSION` may be added to the `.env` file, if you want to r
 VERSION="X.Y.Z"
 ```
 
-# 🏃 Running Your Node
+## 3. Create a Network
 
-First, create a network called "gateway". This helps docker with routing requests.
+First, create a network called "gateway". This helps docker with routing requests if you want to add other projects in the future.
 
 ```
 docker network create --driver=bridge --attachable --internal=false gateway
@@ -82,7 +84,9 @@ docker network create --driver=bridge --attachable --internal=false gateway
 
 This command only needs be run once. You can check it has been created by running `docker network ls`.
 
-To watch the logs of your node, you should run your node in the foreground. To do this, run
+# 🏃 Running Your Node
+
+Now you're ready to run your node! To watch the logs of your node, you should run your node in the foreground. To do this, run
 
 ```
 docker-compose up
@@ -102,7 +106,7 @@ Healthy steady state logs should look like this:
 <p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066399682743505036/Healthy_steady_state_logs.png"></p>
 </details>
 <br />
-Once you are confident your node is running correctly, you can safely close the terminal window. Ctrl+C will stop the container, so the simplest way I have found to detach from docker-compose is to close the terminal window.
+Once you are confident your node is running correctly, you can safely close the terminal window. Ctrl+C will stop the container, so the simplest way I have found to detach from docker-compose is to close the terminal window, which leaves the container running.
 <br />
 <br />
 Alternatively, the containers can be run in the background with
@@ -132,7 +136,7 @@ For the SSL verification to work, your server needs to be able to accept incomin
 <br/>
 
 </details>
-
+<br />
 <details>
     <summary>My node is repeatedly reconnecting to the network</summary>
     Coti's node manager performs health status checks on your node using port 7070.<br/>
@@ -142,10 +146,20 @@ For the SSL verification to work, your server needs to be able to accept incomin
     <li>"35.157.47.86" for mainnet nodes.</li>
     </ul>
 </details>
+<br />
+<details>
+    <summary>`org.rocksdb.RocksDBException: While lock file: ./FullNoderocksDB1/LOCK: Resource temporarily unavailable`</summary>
+    This error can occur if the Coti container is killed abruptly.<br/>
+    The solution is to remove the `LOCK` file:
+    <ul>
+    <li>`rm /var/lib/docker/volumes/coti-node_coti_db/_data/LOCK`</li>
+    </ul>
+</details>
+<br />
 
-If you encounter issues not in this list, you can ask me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
+If you encounter issues not included in this list, please message me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
 
-# Automatic/Manual Updates
+# ⚙️ Automatic/Manual Updates
 
 Unless you have specified a version number, this setup will perform updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
 
@@ -168,7 +182,7 @@ Manual upgrades can be performed as follows:
 - Thanks to <a href="https://github.com/Geordie-R" target="_blank">GeordieR</a>, whose scripts assisted in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
-# How are the Docker images built?
+# 🐳 How are the Docker images built?
 
 A separate repository builds the container images, which are intended for use by the community.
 

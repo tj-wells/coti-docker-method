@@ -1,5 +1,16 @@
 version: '3'
 
+networks:
+  default:
+    name: gateway
+    external: true
+    driver: bridge
+
+volumes:
+  coti_config:
+  coti_db:
+  letsencrypt:
+
 services:
   watchtower:
     container_name: watchtower
@@ -28,8 +39,10 @@ services:
     # command: tail -F anything
     ports:
       - '7070:7070'
+      # - '7070:80' # Nginx
     expose:
       - 7070
+      - 80
     restart: on-failure
     env_file:
       - .env
@@ -54,8 +67,8 @@ services:
       - 'traefik.http.routers.coti-node-ssl.tls=true'
       - 'traefik.http.routers.coti-node-ssl.tls.certResolver=le-ssl'
       - 'traefik.http.routers.coti-node-ssl.service=coti-node-ssl'
-      # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80'
       - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=7070'
+      # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80' # Nginx
       # Watchtower
       - 'com.centurylinklabs.watchtower.enable=true'
 
@@ -90,14 +103,3 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - default
-
-networks:
-  default:
-    name: gateway
-    external: true
-    driver: bridge
-
-volumes:
-  coti_config:
-  coti_db:
-  letsencrypt:
