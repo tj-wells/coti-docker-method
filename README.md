@@ -1,4 +1,7 @@
 <h1 align="center">Coti Node Docker Installation Method</h1>
+
+<p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/>
+
 <p align="center">An easy method to install, upgrade and maintain Coti nodes using Docker.</p>
 
 <p align="center">
@@ -6,12 +9,12 @@
     <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftj-wells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
 </p><br/>
 
-<p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
-
 This method also provides:
 
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
+
+<p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
 # Installation Instructions
 
@@ -171,6 +174,10 @@ A separate repository builds the container images, which are intended for use by
 
 To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are fully automated, transparent, and can be inspected in the github repository linked above.
 
+# How do I monitor my node?
+
+Using Docker makes it easy to add other applications and services to your Coti node. See my guide <a href="https://github.com/tj-wells/coti-node-monitoring" target="_blank">here</a> to learn how to set up a monitoring dashboard for Coti nodes.
+
 # STAY COTI
 
 Stay Coti. ️‍🔥
@@ -183,4 +190,4 @@ If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwe
 <br />
 <br />
 
-<p align="center"><a href="https://twitter.com/tomjwells" target="_blank"><img src="https://cdn.discordapp.com/avatars/343604221331111946/65130831872c9daabdb0d803ce27e594.webp?size=240"></a></p>
+<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://cdn.discordapp.com/avatars/343604221331111946/65130831872c9daabdb0d803ce27e594.webp?size=240"></a></p>
