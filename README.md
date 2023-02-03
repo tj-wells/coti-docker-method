@@ -133,9 +133,7 @@ For the SSL verification to work, your server needs to be able to accept incomin
     To get the SSL certificates installed, you will need to allow all inbound connections (0.0.0.0/0) for ports 80 and 443 to your machine. The precise steps for this will vary depending on your VPS provider.
 <br/>
 <br/>
-
 </details>
-<br />
 <details>
     <summary>My node is repeatedly reconnecting to the network</summary>
     Coti's node manager performs health status checks on your node using port 7070.<br/>
@@ -145,10 +143,9 @@ For the SSL verification to work, your server needs to be able to accept incomin
     <li>"35.157.47.86" for mainnet nodes.</li>
     </ul>
 </details>
-<br />
 <details>
-    <summary>`org.rocksdb.RocksDBException: While lock file: ./FullNoderocksDB1/LOCK: Resource temporarily unavailable`</summary>
-    This error can occur if the Coti container is killed abruptly.<br/>
+    <summary>`While lock file: ./FullNoderocksDB1/LOCK: Resource temporarily unavailable`</summary>
+    This error can occur if the Coti container is stopped abruptly.<br/>
     The solution is to remove the `LOCK` file:
     <ul>
     <li>`rm /var/lib/docker/volumes/coti-node_coti_db/_data/LOCK`</li>
