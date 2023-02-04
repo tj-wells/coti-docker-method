@@ -30,13 +30,6 @@ services:
     image: 'atomnode/coti-node:${VERSION:-latest}'
     command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-*.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
     # image: nginx
-    # command: /bin/bash -c "
-    #   while true; do
-    #     echo 'i.c.b.services.BaseNodeMonitorService Sources = 10, DSPHealthState = NORMAL, DSPOutsideNormalCounter = 0, TCCHealthState = NORMAL, TCCWaitingConfirmation = 0, TCCOutsideNormalCounter = 0, PostponedTransactions = 0, PropagationQueue = 0, WebSocketMessagesQueueLength = 0, waitingDspConsensus = 0, confirmationQueueSize = 0, percentageUsedHeapMemory = 15.84%, percentageUsedMemory = 4.88%,';
-    #     echo 'i.c.b.services.BaseNodeNetworkService  FullNode= 105, DspNode= 1, TrustScoreNode= 1';
-    #     sleep 15;
-    #   done"
-    # command: tail -F anything
     ports:
       - '7070:7070'
       # - '7070:80' # Nginx
@@ -81,14 +74,11 @@ services:
     command:
       - '--global.sendAnonymousUsage=false'
       - '--log.level=DEBUG'
-      - '--api' # Enables the dashboard
+      - '--api'
       - '--metrics'
       - '--metrics.prometheus=true'
       - '--metrics.prometheus.buckets=0.1,0.3,1.2,5.0'
-      # - '--docker'
       - '--providers.docker=true'
-      # - '--docker.swarmMode'
-      # - '--docker.domain=docker.localhost'
       - '--providers.docker.watch'
 
       - '--entryPoints.port443.address=:443'

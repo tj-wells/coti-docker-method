@@ -13,13 +13,13 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
-Watch me launch my node below:
+Watch me launching my node below:
 
 <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
 # Installation Instructions
 
-This method relies on docker and docker-compose. To install these, expand the instructions below.
+This method relies on docker and docker-compose. To get these installed, expand the instructions below.
 
 <details>
     <summary>Installation Instructions for Docker and docker-compose (on most Linux Operating Systems)</summary>
@@ -27,7 +27,7 @@ This method relies on docker and docker-compose. To install these, expand the in
 ```
 sudo su
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
-curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/
+curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 ```
 
 Run the following commands to check if your installations were successful
@@ -75,7 +75,7 @@ VERSION="X.Y.Z"
 
 ## 3. Create a Network
 
-First, create a network called "gateway". This helps docker with routing requests if you want to add other projects in the future.
+First, create a network called `gateway`. This helps docker with routing requests within your machine.
 
 ```
 docker network create --driver=bridge --attachable --internal=false gateway
@@ -182,11 +182,11 @@ Manual upgrades can be performed as follows:
 
 A separate repository builds the container images, which are intended for use by the community.
 
-To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are fully automated, transparent, and can be inspected in the github repository linked above.
+To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are automated, transparent, and can be inspected in the github repository linked to above.
 
-# How do I monitor my node?
+# 🧑‍🔬 How can I monitor my node?
 
-Using Docker makes it easy to add other applications and services to your Coti node. See my guide <a href="https://github.com/tj-wells/coti-node-monitoring" target="_blank">here</a> to learn how to set up a monitoring dashboard for Coti nodes.
+Using Docker makes it easy to add other applications and services to your Coti node. <a href="https://github.com/tj-wells/coti-node-monitoring" target="_blank">See my guide</a> to easily set up a monitoring dashboard for Coti nodes.
 
 # STAY COTI
 
