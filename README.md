@@ -13,7 +13,7 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
-Watch how simple launching a node is below (click to watch in high-resolution):
+Watch how simple launching a node with Docker is below (click to watch in high-resolution):
 
 <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
@@ -122,7 +122,7 @@ If you are not attached to the container, and would like to follow the logs with
 docker-compose logs --follow
 ```
 
-You can safely stop following the logs by pressing `Ctrl+C`.
+When you're not attached to the container, you can safely stop following the logs by pressing `Ctrl+C`.
 
 # 🧑‍💻 Debugging
 
