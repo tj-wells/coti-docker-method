@@ -6,20 +6,20 @@
     <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftj-wells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
 </p>
 
-<p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/>
+<!-- <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/> -->
 
 This method also provides:
 
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
-Watch me launching my node below:
+See a video of me launching my node below:
 
 <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
 # Installation Instructions
 
-This method relies on docker and docker-compose. To get these installed, expand the instructions below.
+This method relies on the programs `docker` and `docker-compose`. To install them, expand the instructions below.
 
 <details>
     <summary>Installation Instructions for Docker and docker-compose (on most Linux Operating Systems)</summary>
@@ -30,7 +30,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 ```
 
-Run the following commands to check if your installations were successful
+Run the following commands to make sure your installations were successful
 
 ```
 docker --version
@@ -50,8 +50,8 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 The `.env` file defines the environment variables used to configure the Coti node. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`. Environment variables should be specified in the format
 
 ```.env
-ACTION="<testnet or mainnet>"
-SERVERNAME="<Your desired testnet URL>"
+ACTION="<mainnet or testnet>"
+SERVERNAME="<Your desired mainnet or testnet URL>"
 PKEY="<Your private key>"
 SEED="<Your seed key>"
 EMAIL="<Your email address>"
@@ -67,21 +67,23 @@ where,
 
 ### Optional Variables
 
-An optional variable `VERSION` may be added to the `.env` file, if you want to run your node on a specific version and disable automatic updates.
+Adding a `VERSION` variable to your `.env` file disables the automatic updates, and allows you to run your node on a specific version. The version variable should be specified in semver notation, as
 
 ```.env
 VERSION="X.Y.Z"
 ```
 
+Check <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a> for the available versions.
+
 ## 3. Create a Network
 
-First, create a network called `gateway`. This helps docker with routing requests within your machine.
+We'll use a Docker network called `gateway` to help route requests within your machine. To create the network, run
 
 ```
 docker network create --driver=bridge --attachable --internal=false gateway
 ```
 
-This command only needs be run once. You can check it has been created by running `docker network ls`.
+Once this network exists there is normally no need to create it again. You can check it has been created by running `docker network ls`.
 
 # 🏃 Running Your Node
 
@@ -120,6 +122,8 @@ If you are not attached to the container, and would like to follow the logs with
 docker-compose logs --follow
 ```
 
+You can safely stop following the logs by pressing `Ctrl+C`.
+
 # 🧑‍💻 Debugging
 
 Below is a list of common errors/problems that have been encountered when setting up the node software, and their solutions.
@@ -148,29 +152,30 @@ For the SSL verification to work, your server needs to be able to accept incomin
     This error can occur if the Coti container is stopped abruptly.<br/>
     The solution is to remove the `LOCK` file:
     <ul>
-    <li>`rm /var/lib/docker/volumes/coti-node_coti_db/_data/LOCK`</li>
+    <li>`rm /var/lib/docker/volumes/coti-node_coti_db/_data/LOCK` - to remove the LOCK file directly, or</li>
+    <li>`docker volume rm coti-node_coti_db` - to remove the Docker volume</li>
     </ul>
 </details>
 <br />
 
-If you encounter issues not included in this list, please message me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or pop your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
+If you encounter issues not mentioned in this list, please message me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or post your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
 
-# ⚙️ Automatic/Manual Updates
+# ⚙️ Updating the Coti Node Version
 
-Unless you have specified a version number, this setup will perform updates automatically, so that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
+If you have not specified a version number, this setup will perform updates automatically, ensuring that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
 
-If you want to bypass the automatic updates, you can do so by specifying the `VERSION` variable in the `.env` file.
+Automatic updates can be bypassed by specifying a `VERSION` number in the `.env` file.
 
-- For example, if you wanted run version 3.1.3 of the Coti node, you can add the line `VERSION="3.1.3"` into your `.env` file.
+- For example, if you wanted run version 3.1.3 of the Coti node, you would add the line `VERSION="3.1.3"` into your `.env` file.
 
-Please check the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a> for a list of the available versions.
+A complete list of the available versions can be found in the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a>.
 
 ## Upgrading Manually
 
 Manual upgrades can be performed as follows:
 
-1. Update the new `VERSION` number in your `.env` file
-2. Run `docker-compose up` to download and run the new version in the foreground, or `docker-compose up -d` to do so in the background
+1. Modify the `VERSION` number in your `.env` file to the version you'd like to run
+2. Run `docker-compose up` to update in the foreground, or `docker-compose up -d` to update in the background
 
 # ✨ Credits
 
@@ -180,13 +185,13 @@ Manual upgrades can be performed as follows:
 
 # 🐳 How are the Docker images built?
 
-A separate repository builds the container images, which are intended for use by the community.
+As Coti does not currently produce official Docker images, this method uses a community-built Docker image.
 
 To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are automated, transparent, and can be inspected in the github repository linked to above.
 
 # 🧑‍🔬 How can I monitor my node?
 
-Using Docker makes it easy to add other applications and services to your Coti node. <a href="https://github.com/tj-wells/coti-node-monitoring" target="_blank">See my guide</a> to easily set up a monitoring dashboard for Coti nodes.
+Using Docker makes it easy to add other applications to your node. <a href="https://github.com/tj-wells/coti-node-monitoring" target="_blank">See my guide</a> to easily set up a monitoring dashboard for Coti nodes.
 
 # STAY COTI
 
