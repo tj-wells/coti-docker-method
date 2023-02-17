@@ -28,7 +28,7 @@ services:
   coti-node:
     container_name: coti-node
     image: 'atomnode/coti-node:${VERSION:-latest}'
-    command: /bin/bash -c "./update-env && java -Xmx8g -jar fullnode/target/fullnode-*.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
+    command: /bin/bash -c "./create-properties && java -Xmx8g -jar fullnode/target/fullnode-*.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
     # image: nginx
     ports:
       - '7070:7070'
