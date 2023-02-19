@@ -147,15 +147,6 @@ For the SSL verification to work, your server needs to be able to accept incomin
     <li>"35.157.47.86" for mainnet nodes.</li>
     </ul>
 </details>
-<details>
-    <summary>`While lock file: ./FullNoderocksDB1/LOCK: Resource temporarily unavailable`</summary>
-    This error can occur if the Coti container is stopped abruptly.<br/>
-    The solution is to remove the `LOCK` file:
-    <ul>
-    <li>`rm /var/lib/docker/volumes/coti-node_coti_db/_data/LOCK` - to remove the LOCK file directly, or</li>
-    <li>`docker volume rm coti-node_coti_db` - to remove the Docker volume</li>
-    </ul>
-</details>
 <br />
 
 If you encounter issues not mentioned in this list, please message me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or post your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
