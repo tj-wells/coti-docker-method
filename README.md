@@ -13,7 +13,7 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to the latest Coti node version
 
-Watch how simple launching a node with Docker is below (click to watch in high-resolution):
+Watch how easy launching a node with Docker is below (click for high-resolution):
 
 <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
@@ -75,7 +75,7 @@ VERSION="X.Y.Z"
 
 Check <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a> for the available versions.
 
-## 3. Create a Network
+## 3. Create a Docker Network
 
 We'll use a Docker network called `gateway` to help route requests within your machine. To create the network, run
 
