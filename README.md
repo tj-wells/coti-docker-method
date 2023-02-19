@@ -77,13 +77,13 @@ Check <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank"
 
 ## 3. Create a Docker Network
 
-We'll use a Docker network called `gateway` to help route requests within your machine. To create the network, run
+A Docker network called `gateway` is required to help route requests within your machine. To create the network, run
 
 ```
 docker network create --driver=bridge --attachable --internal=false gateway
 ```
 
-Once this network exists there is normally no need to create it again. You can check it has been created by running `docker network ls`.
+Once this network is created, there is normally no need to create it again. You can check if it has been created by running `docker network ls`.
 
 # 🏃 Running Your Node
 
