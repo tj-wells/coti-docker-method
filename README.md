@@ -155,7 +155,7 @@ If you encounter issues not mentioned in this list, please message me (<a href="
 
 If you have not specified a version number, this setup will perform updates automatically, ensuring that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
 
-Automatic updates can be bypassed by specifying a `VERSION` number in the `.env` file.
+However, I understand that mainnet operators are often asked not to run the latest version and thus may want to control the updating themselves. Automatic updates can be bypassed by specifying a `VERSION` number in the `.env` file. Instructions for performing updates manually are provided below.
 
 - For example, if you wanted run version 3.1.3 of the Coti node, you would add the line `VERSION="3.1.3"` into your `.env` file.
 
