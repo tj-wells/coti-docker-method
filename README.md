@@ -196,4 +196,4 @@ If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwe
 <br />
 <br />
 
-<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://cdn.discordapp.com/avatars/343604221331111946/65130831872c9daabdb0d803ce27e594.webp?size=240"></a></p>
+<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://cdn.discordapp.com/attachments/465686348234358804/1080714914752122880/atoms-02-01.png" style="width: 330px"></a></p>
