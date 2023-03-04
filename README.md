@@ -49,7 +49,7 @@ git clone https://github.com/tj-wells/coti-node.git && cd coti-node
 
 ## 2. Create a `.env` File
 
-The `.env` file defines the environment variables used to configure the Coti node. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
+The `.env` file defines the environment variables used to run the Coti node with your information. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
 
 ```.env
 ACTION="<mainnet or testnet>"
@@ -79,7 +79,7 @@ Check <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank"
 
 ## 3. Create a Docker Network
 
-A Docker network called `gateway` is required to help route requests within your machine. To create the network, run
+A Docker network called `gateway` helps route requests within your machine. To create the network, run
 
 ```
 docker network create --driver=bridge --attachable --internal=false gateway
