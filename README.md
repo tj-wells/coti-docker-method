@@ -180,7 +180,7 @@ Manual upgrades can be performed as follows:
 
 As Coti does not currently produce official Docker images, this method uses a community-built Docker image.
 
-To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>. All of the code and workflow runs involved in the build process are automated, transparent, and can be inspected in the github repository linked to above.
+To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>.
 
 # 🧑‍🔬 How can I monitor my node?
 
