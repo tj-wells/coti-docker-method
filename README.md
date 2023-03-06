@@ -2,11 +2,11 @@
 
 <p align="center">An easy method to install, upgrade and maintain Coti nodes using Docker.</p>
 <p align="center">
-	<a href="https://github.com/tj-wells/coti-node"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tj-wells/coti-node"></a>
-    <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftj-wells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
+	<a href="https://github.com/tomjwells/coti-node"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tomjwells/coti-node"></a>
+    <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftomjwells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
 </p>
 
-<!-- <p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/> -->
+<!-- <p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/> -->
 
 This method also provides:
 
@@ -15,7 +15,7 @@ This method also provides:
 
 Watch how easy launching a node with Docker is below (click for high-resolution):
 
-<p align="center"><a href="https://github.com/tj-wells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tj-wells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
+<p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tomjwells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
 # Installation Instructions
 
@@ -44,12 +44,12 @@ docker-compose --version
 Strictly speaking, the only file that's needed is [docker-compose.yml](https://github.com/tomjwells/coti-node/blob/master/docker-compose.yml), so if you don't want to clone the repository, you could just copy and paste the contents of that file. However, cloning is typically faster and preserves the file structure and can be done with
 
 ```
-git clone https://github.com/tj-wells/coti-node.git && cd coti-node
+git clone https://github.com/tomjwells/coti-node.git && cd coti-node
 ```
 
 ## 2. Create a `.env` File
 
-The `.env` file defines the environment variables used to run the Coti node with your information. You can start from a <a href="https://github.com/tj-wells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
+The `.env` file defines the environment variables used to run the Coti node with your information. You can start from a <a href="https://github.com/tomjwells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
 
 ```.env
 ACTION="<mainnet or testnet>"
@@ -180,11 +180,11 @@ Manual upgrades can be performed as follows:
 
 As Coti does not currently produce official Docker images, this method uses a community-built Docker image.
 
-To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tj-wells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>.
+To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>.
 
 # 🧑‍🔬 How can I monitor my node?
 
-Using Docker makes it easy to add other applications to your node. <a href="https://github.com/tj-wells/coti-node-monitoring" target="_blank">See my guide</a> to easily set up a monitoring dashboard for Coti nodes.
+Using Docker makes it easy to add other applications to your node. <a href="https://github.com/tomjwells/coti-node-monitoring" target="_blank">See my guide</a> to easily set up a monitoring dashboard for Coti nodes.
 
 # STAY COTI
 
