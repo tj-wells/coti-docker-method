@@ -176,7 +176,7 @@ Manual upgrades can be performed as follows:
 - Thanks to <a href="https://github.com/Geordie-R" target="_blank">GeordieR</a>, whose scripts assisted in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
-# 🐳 How are the Docker images built?
+# 🐳 What Docker image is being used?
 
 As Coti does not currently produce official Docker images, this method uses a community-built Docker image.
 
