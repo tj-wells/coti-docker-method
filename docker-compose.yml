@@ -41,7 +41,7 @@ services:
       - .env
     volumes:
       - 'coti_config:/app/data'
-      - 'coti_db:/app/FullNoderocksDB1'
+      - 'coti_db:/app/${DATABSE_FOLDER_NAME:-FullNoderocksDB}'
     deploy:
       resources:
         limits:
@@ -64,6 +64,10 @@ services:
       # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80' # Nginx
       # Watchtower
       - 'com.centurylinklabs.watchtower.enable=true'
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "3"
 
   traefik:
     container_name: traefik
@@ -93,3 +97,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - default
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "3"
