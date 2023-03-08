@@ -37,7 +37,7 @@ docker-compose --version
 
 ## 1. Clone the Repository
 
-Strictly speaking, the only file that's needed is [docker-compose.yml](https://github.com/tomjwells/coti-node/blob/master/docker-compose.yml), so if you don't want to clone the repository, you could just copy and paste the contents of that file. However, cloning is typically faster and preserves the file structure and can be done with
+The contents of this repository can be downloaded to your machine using
 
 ```
 git clone https://github.com/tomjwells/coti-node.git && cd coti-node
