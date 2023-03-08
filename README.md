@@ -19,10 +19,7 @@ See how simple launching a Coti node with Docker can be below (click for high-re
 
 # Installation Instructions
 
-This method relies on the programs `docker` and `docker-compose`. To install them, expand the instructions below.
-
-<details>
-    <summary>Installation Instructions for Docker and docker-compose (on most Linux Operating Systems)</summary>
+This method relies on having the programs `docker` and `docker-compose` installed. They can be installed using the commands below.
 
 ```
 sudo su
@@ -30,14 +27,13 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 ```
 
-Run the following commands to make sure your installations were successful
+You can check if your installations were successful using
 
 ```
 docker --version
 docker-compose --version
 ```
 
-</details>
 
 ## 1. Clone the Repository
 
