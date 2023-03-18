@@ -108,8 +108,8 @@ Healthy steady state logs should look like this:
 </details>
 <br />
 To detach from a container that is running in the foreground, the best way I have found is to simply close the terminal window, which safely leaves the container running.
+<br /><br />
 
-<br />
 If you are confident your node runs correctly, you can run it in the background with
 
 ```
@@ -146,6 +146,7 @@ For the SSL verification to work, your server needs to be able to accept incomin
     <li>"52.59.142.53" for testnet nodes,</li>
     <li>"35.157.47.86" for mainnet nodes.</li>
     </ul>
+	If you have made port 7070 accessible to the general internet (which may be useful for debugging), you can verify that port 7070 is working correctly in your browser by entering the url `http://YOUR-NODE-URL:7070/nodeHash`, which should return your node hash. As an example for my node this would be [http://testnet.atomnode.tomoswells.com:7070/nodeHash](http://testnet.atomnode.tomoswells.com:7070/nodeHash). Note: After experimenting I found this not to work consistently in all browsers (due to SSL errors), but it has worked for me reliably in firefox and safari. You can also use the command line program `curl`, for example `curl http://testnet.atomnode.tomoswells.com:7070/nodeHash`.
 </details>
 <br />
 
@@ -153,13 +154,13 @@ If you encounter issues not mentioned in this list, please message me (<a href="
 
 # ⚙️ Updating the Coti Node Version
 
-If you have not specified a version number, this setup will perform updates automatically, ensuring that your node stays up to date when new <a href="https://github.com/coti-io/coti-node/releases" target="_blank">Coti releases</a> are made available.
+If you have not specified a version number, this setup performs updates automatically, ensuring that your node stays up to date with the latest [Coti release](https://github.com/coti-io/coti-node/releases).
 
 However, I understand that mainnet operators are often asked not to run the latest version and thus may want to control the updating themselves. Automatic updates can be bypassed by specifying a `VERSION` number in the `.env` file. Instructions for performing updates manually are provided below.
 
 - For example, if you wanted run version 3.1.3 of the Coti node, you would add the line `VERSION="3.1.3"` into your `.env` file.
 
-A complete list of the available versions can be found in the <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub registry</a>.
+A complete list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
 ## Upgrading Manually
 
