@@ -47,7 +47,7 @@ Alternatively, you can copy and paste the contents of [docker-compose.yml](https
 
 ## 2. Create a `.env` File
 
-The `.env` file defines the environment variables used to run the Coti node with your information. You can start from a <a href="https://github.com/tomjwells/coti-node/blob/master/.env.sample" target="_blank">valid `.env` file</a> by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
+A `.env` file is used to define the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
 
 ```.env
 ACTION="<mainnet or testnet>"
@@ -73,7 +73,7 @@ Adding a `VERSION` variable to your `.env` file disables the automatic updates, 
 VERSION="X.Y.Z"
 ```
 
-Check <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a> for the available versions.
+A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
 ## 3. Create a Docker Network
 
@@ -85,9 +85,9 @@ docker network create --driver=bridge --attachable --internal=false gateway
 
 Once this network is created, there is normally no need to create it again. You can check if it has been created by running `docker network ls`.
 
-# 🏃 Running Your Node
+# 🏃 Run Your Node
 
-Now you're ready to run your node! To watch the logs of your node, you should run your node in the foreground. To do this, run
+Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend you run the container in the foreground so you can watch the logs of your node. To do this, run
 
 ```
 docker-compose up
@@ -107,22 +107,21 @@ Healthy steady state logs should look like this:
 <p align="center"><img src="https://media.discordapp.net/attachments/995792094088155227/1066399682743505036/Healthy_steady_state_logs.png"></p>
 </details>
 <br />
-Once you are confident your node is running correctly, you can safely close the terminal window. Ctrl+C will stop the container, so the simplest way I have found to detach from docker-compose is to close the terminal window, which leaves the container running.
+To detach from a container that is running in the foreground, the best way I have found is to simply close the terminal window, which safely leaves the container running.
 <br />
-<br />
-Alternatively, the containers can be run in the background with
+If you are confident your node runs correctly, you can run it in the background with
 
 ```
 docker-compose up -d
 ```
 
-If you are not attached to the container, and would like to follow the logs without restarting the container, you can do so with
+You can still follow the logs of a container that's running a background, with
 
 ```
 docker-compose logs --follow
 ```
 
-When you're not attached to the container, you can safely stop following the logs by pressing `Ctrl+C`.
+When using the above command, you can safely stop following the logs by pressing `Ctrl+C`.
 
 # 🧑‍💻 Debugging
 
