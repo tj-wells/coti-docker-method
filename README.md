@@ -11,7 +11,7 @@
 This method also provides:
 
 - Automatic SSL certificate creation and renewal
-- Automatic upgrades to the latest Coti node version
+- Automatic upgrades to new Coti node releases
 
 See how easy launching a Coti node with Docker is below (click for high-resolution):
 
