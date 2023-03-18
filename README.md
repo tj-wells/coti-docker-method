@@ -146,7 +146,7 @@ For the SSL verification to work, your server needs to be able to accept incomin
     <li>"52.59.142.53" for testnet nodes,</li>
     <li>"35.157.47.86" for mainnet nodes.</li>
     </ul>
-	If you have made port 7070 accessible to the general internet (which may be useful for debugging), you can verify that port 7070 is working correctly in your browser by entering the url `http://YOUR-NODE-URL:7070/nodeHash`, which should return your node hash. As an example for my node this would be [http://testnet.atomnode.tomoswells.com:7070/nodeHash](http://testnet.atomnode.tomoswells.com:7070/nodeHash). Note: After experimenting I found this not to work consistently in all browsers (due to SSL errors), but it has worked for me reliably in firefox and safari. You can also use the command line program `curl`, for example `curl http://testnet.atomnode.tomoswells.com:7070/nodeHash`.
+	If you have made port 7070 accessible to the general internet (which may be useful for debugging), you can verify that port 7070 is working correctly in your browser by entering the url `http://YOUR-NODE-URL:7070/nodeHash`, which should return your node hash. As an example for my node this would be <a href="http://testnet.atomnode.tomoswells.com:7070/nodeHash">http://testnet.atomnode.tomoswells.com:7070/nodeHash</a>. Note: After experimenting I found this not to work consistently in all browsers (due to SSL errors), but it has worked for me reliably in firefox and safari. You can also use the command line program `curl`, for example `curl http://testnet.atomnode.tomoswells.com:7070/nodeHash`.
 </details>
 <br />
 
