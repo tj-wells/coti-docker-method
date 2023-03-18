@@ -73,7 +73,7 @@ Adding a `VERSION` variable to your `.env` file disables the automatic updates, 
 VERSION="X.Y.Z"
 ```
 
-A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
+A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If no version is specified, Docker will simply use the latest available release.
 
 ## 3. Create a Docker Network
 
