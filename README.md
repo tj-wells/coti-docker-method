@@ -1,6 +1,6 @@
 <h1 align="center">Coti Node Docker Installation Method</h1>
 
-<p align="center">A method for easily installing, upgrading and maintaining Coti nodes using Docker.</p>
+<p align="center">A method to easily install, upgrade and maintain Coti nodes using Docker.</p>
 <p align="center">
 	<a href="https://github.com/tomjwells/coti-node"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tomjwells/coti-node"></a>
     <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftomjwells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
