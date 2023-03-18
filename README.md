@@ -108,7 +108,8 @@ Healthy steady state logs should look like this:
 </details>
 <br />
 To detach from a container that is running in the foreground, the best way I have found is to simply close the terminal window, which safely leaves the container running.
-<br />
+
+<br /><br />
 If you are confident your node runs correctly, you can run it in the background with
 
 ```
