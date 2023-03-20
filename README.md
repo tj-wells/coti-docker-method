@@ -13,7 +13,7 @@ This method also provides:
 - Automatic SSL certificate creation and renewal
 - Automatic upgrades to new Coti node releases
 
-See how easy launching a Coti node with Docker is below (click for high-resolution):
+The gif below shows me inspecting my .env file, and then launching the node within Docker (click for high-resolution):
 
 <p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tomjwells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
 
