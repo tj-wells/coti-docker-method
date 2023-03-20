@@ -67,13 +67,13 @@ where,
 
 ### Optional Variables
 
-Adding a `VERSION` variable to your `.env` file disables the automatic updates, and allows you to run your node on a specific version. The version variable should be specified in semver notation, as
+Adding a `VERSION` variable to your `.env` file disables the automatic updates, and allows you to run your node on a specific version. The version variable should be as
 
 ```.env
 VERSION="X.Y.Z"
 ```
 
-A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If no version is specified, Docker will simply use the latest available release.
+A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will use the latest available release.
 
 ## 3. Create a Docker Network
 
