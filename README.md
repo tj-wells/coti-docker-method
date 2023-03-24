@@ -169,6 +169,10 @@ Manual upgrades can be performed as follows:
 1. Modify the `VERSION` number in your `.env` file to the version you'd like to run
 2. Run `docker-compose up` to update in the foreground, or `docker-compose up -d` to update in the background
 
+## Upgrading through a Web Interface
+
+If you don't want automatic updates, but also don't want the inconvenience of logging into your server to make manual upgrades, there is a good solution for this problem. It is possible to use a service called Portainer, which manages Docker containers running on a server from a web interface. If you want to run your node this way, check my [coti-node-portainer](https://github.com/tomjwells/coti-node-portainer) repository.
+
 # ✨ Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
