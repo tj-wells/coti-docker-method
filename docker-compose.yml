@@ -62,9 +62,9 @@ services:
       - 'traefik.http.routers.coti-node-ssl.service=coti-node-ssl'
       - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=7070'
       # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80' # Nginx
+      - 'traefik.http.routers.coti-node-ssl.middlewares=securedheaders@docker' # Enable http middleware for A+ SSL
       # Watchtower
       - 'com.centurylinklabs.watchtower.enable=true'
-      - 'traefik.http.routers.frontend-ssl.middlewares=securedheaders@docker' # Enable http middleware for A+ SSL
     logging:
       options:
         max-size: "50m"
