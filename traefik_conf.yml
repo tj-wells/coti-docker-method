@@ -1,0 +1,10 @@
+# https://www.djpic.net/articles/traefik-v2-secure-tls-and-header-configuration-with-docker-provider/ "the options to limit TLS versions and ciphers is not available in docker labels"
+
+tls:
+  options:
+    default:
+      minVersion: VersionTLS12
+      curvePreferences:
+        - secp521r1
+        - secp384r1
+      sniStrict: true
