@@ -43,8 +43,6 @@ The contents of this repository can be downloaded to your machine using
 git clone https://github.com/tomjwells/coti-node.git && cd coti-node
 ```
 
-Alternatively, you can copy and paste the contents of [docker-compose.yml](https://github.com/tomjwells/coti-node/blob/master/docker-compose.yml).
-
 ## 2. Create a `.env` File
 
 A `.env` file is used to define the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. Environment variables should be specified in the format
