@@ -12,27 +12,14 @@ volumes:
   letsencrypt:
 
 services:
-  watchtower:
-    container_name: watchtower
-    image: containrrr/watchtower:1.5.3
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      WATCHTOWER_POLL_INTERVAL: 120
-      WATCHTOWER_CLEANUP: true
-      WATCHTOWER_LABEL_ENABLE: true
-      WATCHTOWER_INCLUDE_RESTARTING: true
-      WATCHTOWER_WARN_ON_HEAD_FAILURE: never
-
   coti-node:
     container_name: coti-node
     image: 'atomnode/coti-node:${VERSION:-latest}'
+    # image: 'containous/whoami' # Debug
     command: /bin/bash -c "./create-properties && java -Xmx8g -jar fullnode/target/fullnode-*.RELEASE.jar --spring.config.additional-location=./data/fullnode.properties"
-    # image: nginx
     ports:
       - '7070:7070'
-      # - '7070:80' # Nginx
+      # - '7070:80' # Debug
     expose:
       - 7070
       - 80
@@ -61,10 +48,8 @@ services:
       - 'traefik.http.routers.coti-node-ssl.tls.certResolver=le-ssl'
       - 'traefik.http.routers.coti-node-ssl.service=coti-node-ssl'
       - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=7070'
-      # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80' # Nginx
+      # - 'traefik.http.services.coti-node-ssl.loadBalancer.server.port=80' # Debug
       - 'traefik.http.routers.coti-node-ssl.middlewares=securedheaders@docker' # Enable http middleware for A+ SSL
-      # Watchtower
-      - 'com.centurylinklabs.watchtower.enable=true'
     logging:
       options:
         max-size: "50m"
@@ -92,7 +77,7 @@ services:
       - '--entryPoints.port7070.address=:7070'
 
       - '--certificatesResolvers.le-ssl.acme.tlsChallenge=true'
-      - '--certificatesResolvers.le-ssl.acme.email=info@example.com'
+      - '--certificatesResolvers.le-ssl.acme.email=${EMAIL}'
       - '--certificatesResolvers.le-ssl.acme.storage=/letsencrypt/acme.json'
 
       - "--providers.file.filename=/traefik_conf.yml" # SSL A+ (https://www.simplecto.com/improve-traefik-https-encryption-qualys-ssl-labs-testssl-sh/)
