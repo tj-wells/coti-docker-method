@@ -23,7 +23,6 @@ services:
     expose:
       - 7070
       - 80
-    restart: on-failure
     env_file:
       - .env
     volumes:
