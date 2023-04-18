@@ -10,8 +10,8 @@
 
 This method also provides:
 
-- Automatic SSL certificate creation and renewal
-- Automatic upgrades to new Coti node releases
+- Automatic A+ SSL certificates
+- Easy upgrades to new Coti node releases
 
 The gif below shows me inspecting my .env file, and then launching the node with Docker (click for high-resolution):
 
