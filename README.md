@@ -13,9 +13,9 @@ This method also provides:
 - Automatic A+ SSL certificates
 - Easy upgrades to new Coti node releases
 
-The gif below shows me inspecting my .env file, and then launching the node with Docker (click for high-resolution):
+The video below shows an example of launching a Coti node with Docker:
 
-<p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tomjwells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a></p><br/>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/TIid1FFYchw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p><br/>
 
 # Installation Instructions
 
