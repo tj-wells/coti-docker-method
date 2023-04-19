@@ -15,8 +15,10 @@ This method also provides:
 
 The video below shows an example of launching a Coti node with Docker:
 
-<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/TIid1FFYchw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p><br/>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/TIid1FFYchw/0.jpg)](https://www.youtube.com/watch?v=TIid1FFYchw)
+<p align="center">
+	<a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://raw.githubusercontent.com/tomjwells/gif/master/coti-node-demo-clipped_censored_1080p.gif" width="100%" /></a>
+</p><br/>
+
 
 # Installation Instructions
 
