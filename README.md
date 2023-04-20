@@ -177,11 +177,11 @@ If you don't want automatic updates, but also don't want the inconvenience of lo
 - Thanks to <a href="https://github.com/Geordie-R" target="_blank">GeordieR</a>, whose scripts assisted in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
-# 🐳 What Docker image is being used?
+# 🐳 Which Docker image is used?
 
 As there currently is no official Docker image, this method uses a community-built Docker image.
 
-To ensure that the images are produced in a fully transparent and open-source way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>, and pushed to <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">this Dockerhub registry</a>.
+To ensure that the images are produced in a fully accountable and transparent way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>. You can find the built images on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # 🧑‍🔬 How can I monitor my node?
 
