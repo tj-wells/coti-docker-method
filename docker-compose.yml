@@ -63,7 +63,7 @@ services:
       - '443:443'
     command:
       - '--global.sendAnonymousUsage=false'
-      - '--log.level=DEBUG'
+      - '--log.level=INFO'
       - '--api'
       - '--metrics'
       - '--metrics.prometheus=true'
