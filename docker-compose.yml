@@ -28,11 +28,6 @@ services:
     volumes:
       - 'coti_config:/app/data'
       - 'coti_db:/app/${DATABSE_FOLDER_NAME:-FullNoderocksDB}'
-    deploy:
-      resources:
-        limits:
-          cpus: '0.9'
-          memory: 8G
     labels:
       # SSL redirect requires a separate router (https://github.com/containous/traefik/issues/4688#issuecomment-477800500)
       - 'traefik.http.routers.coti-node.entryPoints=port7070'
