@@ -8,7 +8,7 @@
 
 <!-- <p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/> -->
 
-This method provides:
+This method also provides:
 
 - Automatic A+ rated SSL certificates
 - Easy upgrades to new Coti node releases
