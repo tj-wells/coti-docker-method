@@ -150,13 +150,13 @@ docker-compose up -d
 
 This causes Docker to check for new versions of the Docker image and installs the latest available version.
 
-If the `VERSION` environment variable was specified, you should first edit the version in your `.env` file. After that running
+If the `VERSION` environment variable was specified, you should first edit the version in your `.env` file. After that, running
 
 ```
 docker-compose up -d
 ```
 
-should update your node.
+will update your node.
 
 A complete list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
