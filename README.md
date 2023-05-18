@@ -65,7 +65,7 @@ where,
 
 ### Optional Variables
 
-Adding a `VERSION` variable to your `.env` file disables the automatic updates, and allows you to run your node on a specific version. The version variable should be as
+Adding a `VERSION` variable to your `.env` file allows you to specify which version of the Coti node to run. If the VERSION is not specified, Docker will automatically use the latest version. The version variable should be set as
 
 ```.env
 VERSION="X.Y.Z"
