@@ -162,7 +162,7 @@ A complete list of the available versions can be found at [Dockerhub](https://hu
 
 ## Upgrading through a Web Interface
 
-If you don't want the inconvenience of logging into your server to make manual upgrades, there is a good solution for this problem. A service called Portainer can be used to manage Docker containers from a web interface. If you want to run your node this way, check my [coti-node-portainer](https://github.com/tomjwells/coti-node-portainer) repository.
+If you don't want the inconvenience of logging into your server to make manual upgrades, a service called Portainer can be used to manage Docker containers from a web interface. If you want to run your node this way, check my [coti-node-portainer](https://github.com/tomjwells/coti-node-portainer) repository.
 
 # ✨ Credits
 
