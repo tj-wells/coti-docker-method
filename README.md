@@ -172,7 +172,7 @@ If you don't want the inconvenience of logging into your server to make manual u
 
 # 🐳 Which Docker image is used?
 
-As there currently is no official Docker image, this method uses a community-built Docker image.
+As there currently is no official Docker image, this method uses a community-built Docker image. I have submitted a [pull request](https://github.com/coti-io/coti-node/pull/54) to the Coti team to include a github action that would build official Docker images of the Coti node.
 
 To ensure that the images are produced in a fully accountable and transparent way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>. You can find the built images on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
