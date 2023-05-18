@@ -11,7 +11,7 @@
 This method also provides:
 
 - Automatic A+ rated SSL certificates
-- Easy upgrades to new Coti node releases
+- Easy (one-line) upgrades to new Coti node releases
 
 The video below shows an example of the logs produced when launching a Coti node with Docker:
 
