@@ -156,7 +156,7 @@ If the `VERSION` environment variable was specified, you should first edit the v
 docker-compose up -d
 ```
 
-should successfully update your node.
+should update your node.
 
 A complete list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
