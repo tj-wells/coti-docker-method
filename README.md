@@ -73,16 +73,6 @@ VERSION="X.Y.Z"
 
 A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will use the latest available release.
 
-## 3. Create a Docker Network
-
-A Docker network called `gateway` helps route requests within your machine. To create the network, run
-
-```
-docker network create --driver=bridge --attachable --internal=false gateway
-```
-
-Once this network is created, there is normally no need to create it again. You can check if it has been created by running `docker network ls`.
-
 # 🏃 Run Your Node
 
 Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend you run the container in the foreground so you can watch the logs of your node. To do this, run
