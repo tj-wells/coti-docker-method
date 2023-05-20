@@ -190,7 +190,7 @@ To ensure that the images are produced in a fully accountable and transparent wa
 
 Using Docker makes it easy to add other applications to your node. <a href="https://github.com/tomjwells/coti-node-monitoring" target="_blank">See my guide</a> for setting up a monitoring dashboard for Coti nodes.
 
-# STAY COTI
+# Stay Coti
 
 Stay Coti. ️‍🔥
 <br />
@@ -203,4 +203,4 @@ If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwe
 <br />
 <br />
 
-<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://github.com/tomjwells/coti-node/assets/5472339/d64ec770-fdc8-406b-a438-e263f1f448a1" style="width: 330px" /></a></p>
+<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://camo.githubusercontent.com/a927d600622b8bbc7571407c935c7a62f5838e91829fbee0a7ca2be31ba5cbe7/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3436353638363334383233343335383830342f313038383834333036373432353035303738342f61746f6d732d332d30312e706e673f77696474683d383532266865696768743d383530" style="width: 330px"></a></p>
