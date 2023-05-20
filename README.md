@@ -75,13 +75,13 @@ where,
 
 ### Optional Variables
 
-Adding a `VERSION` variable to your `.env` file allows you to specify which version of the Coti node to run. If the VERSION is not specified, Docker will automatically use the latest version. The version variable should be set as
+Adding a `VERSION` variable to your `.env` file allows you to specify which version of the Coti node to run. If the `VERSION` is not specified, Docker will automatically use the latest version. The version variable should be set as
 
 ```.env
 VERSION="X.Y.Z"
 ```
 
-A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will use the latest available release.
+where X.Y.Z is a valid version number. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will automatically use the latest available release.
 
 # 🏃 Run Your Node
 
