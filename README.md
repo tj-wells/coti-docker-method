@@ -19,11 +19,11 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-I made a guide that teaches some basic Docker concepts and walks the reader through the steps of setting up a Coti node with Docker. Please follow [this link to read the guide](https://docker.guides.coticommunity.com).
+I made a guide that teaches some basic Docker concepts and walks readers through the steps of setting up a Coti node with Docker. Please follow [this link to read the guide](https://docker.guides.coticommunity.com).
 
-I suggest using the Docker guide if you are not already very familiar with Docker.
+I suggest looking through the Docker guide if you are not already very experienced with Docker.
 
-If you already have experience with Docker, the instructions below provide enough information to get your node running. If you are in doubt about anything, you can always consult the Docker guide, which gives a more detailed description of the setup process.
+If you already have experience with Docker, the instructions below may provide enough information to get your node running. If you are in doubt about anything, you can always check the Docker guide, which gives a more detailed description of the setup process.
 
 Good luck!
 
