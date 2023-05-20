@@ -81,7 +81,7 @@ Adding a `VERSION` variable to your `.env` file allows you to specify which vers
 VERSION="X.Y.Z"
 ```
 
-where X.Y.Z is a valid version number. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will automatically use the latest available release.
+where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will automatically use the latest available release.
 
 # 🏃 Run Your Node
 
@@ -177,7 +177,7 @@ If you don't want the inconvenience of logging into your server to make manual u
 # ✨ Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
-- Thanks to <a href="https://github.com/Geordie-R" target="_blank">GeordieR</a>, whose scripts assisted in developing this installation method using Docker.
+- Thanks to [GeordieR](https://twitter.com/Geordie_R), whose scripts helped me in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
 # 🐳 Which Docker image is used?
@@ -197,9 +197,10 @@ Stay Coti. ️‍🔥
 <br />
 <br />
 
+
 If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
 <br />
 <br />
 <br />
 
-<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://camo.githubusercontent.com/a927d600622b8bbc7571407c935c7a62f5838e91829fbee0a7ca2be31ba5cbe7/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3436353638363334383233343335383830342f313038383834333036373432353035303738342f61746f6d732d332d30312e706e673f77696474683d383532266865696768743d383530" style="width: 330px"></a></p>
+<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://github.com/tomjwells/coti-node/assets/5472339/d64ec770-fdc8-406b-a438-e263f1f448a1" style="width: 330px" /></a></p>
