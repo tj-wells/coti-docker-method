@@ -17,6 +17,16 @@ The video below shows an example of the logs produced when launching a Coti node
 
 https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-91c4-c6f05d7cb8cf.mov
 
+# Docker Guide
+
+I made a guide that teaches some basic Docker concepts and walks the reader through the steps of setting up a Coti node with Docker. Please follow [this link to read the guide](https://docker.guides.coticommunity.com).
+
+I suggest using the Docker guide if you are not already very familiar with Docker.
+
+If you already have experience with Docker, the instructions below provide enough information to get your node running. If you are in doubt about anything, you can always consult the Docker guide, which gives a more detailed description of the setup process.
+
+Good luck!
+
 # Installation Instructions
 
 This method relies on having the programs `docker` and `docker-compose` installed. They can be installed using the commands below.
