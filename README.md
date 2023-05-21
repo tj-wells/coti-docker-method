@@ -17,27 +17,31 @@ The video below shows an example of the logs produced when launching a Coti node
 
 https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-91c4-c6f05d7cb8cf.mov
 
-# Docker Guide
+# [Docker Guide](https://docker.guides.coticommunity.com)
 
-I made a guide that teaches some basic Docker concepts and walks readers through the steps of setting up a Coti node with Docker. Please follow [this link to read the guide](https://docker.guides.coticommunity.com).
+There is also a guide that teaches some basic Docker concepts and walks readers through the steps of setting up a Coti node with Docker. The guide is available [here](https://docker.guides.coticommunity.com).
 
-I suggest looking through the Docker guide if you are not already very experienced with Docker.
+The Docker guide will likely be very helpful if you are not already very experienced with Docker.
 
-If you already have experience with Docker, the instructions below may provide enough information to get your node running. If you are in doubt about anything, you can always check the Docker guide, which gives a more detailed description of the setup process.
+If you are experienced with Docker, the instructions below should provide enough information to get your node running. If you are in doubt about anything, you can always check the Docker guide, which gives a more detailed description of the setup process.
 
 Good luck!
 
-# Installation Instructions
+# Instructions
 
-This method relies on having the programs `docker` and `docker-compose` installed. They can be installed using the commands below.
+This method relies on having the programs `docker` and `docker-compose` installed. First, log in as root using `sudo su`. Then, Docker can be installed using
 
 ```
-sudo su
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+```
+
+and docker-compose can be installed with
+
+```
 curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 ```
 
-You can check if your installations were successful using
+You can check if your installations were successful by running
 
 ```
 docker --version
