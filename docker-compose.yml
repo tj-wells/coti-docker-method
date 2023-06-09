@@ -97,12 +97,16 @@ services:
 
   node-monitor:
     image: docker
+    # Only check for presence of SERVERNAME if nodemanager is up and node is not blocked
     command: sh -c "apk add curl; \
       while true; \
       do \
-        $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
-          echo $(date '+%A %d %m %Y %X:') 'Node monitor found node ${SERVERNAME}' || 
-          (echo $(date '+%A %d %m %Y %X:') 'Node not found' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
+        curl -s https://${ACTION}-nodemanager.coti.io/nodes > /dev/null && $(curl -sI https://${ACTION}-nodemanager.coti.io/nodes | grep -q 403) || \    
+        ( \
+          $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
+            echo $(date '+%A %d %m %Y %X:') 'Node monitor found node ${SERVERNAME}' || \
+            (echo $(date '+%A %d %m %Y %X:') 'Node not found' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
+        ); \
         sleep 600; \
       done" 
     volumes:
