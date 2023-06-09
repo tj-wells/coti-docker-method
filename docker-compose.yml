@@ -98,7 +98,7 @@ services:
   # The node monitor checks if your node is up every 10 minutes and restarts it if it is not connected
   node-monitor:
     image: docker:24.0.2
-    # Only check for presence of SERVERNAME if nodemanager is up and node is not blocked
+    # Only check for presence of ${SERVERNAME} if the nodemanager is up and node is not blocked
     command: sh -c "apk add curl; \
       while true; \
       do \
