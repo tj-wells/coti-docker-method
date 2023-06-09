@@ -94,3 +94,17 @@ services:
       options:
         max-size: "50m"
         max-file: "3"
+
+  node-monitor:
+    image: docker
+    command: sh -c "apk add curl; \
+      while true; \
+      do \
+        $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
+          echo $(date '+%A %d %m %Y %X:') 'Node monitor found node ${SERVERNAME}' || 
+          (echo $(date '+%A %d %m %Y %X:') 'Node not found' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
+        sleep 600; \
+      done" 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/coti-node
