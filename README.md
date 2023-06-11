@@ -12,6 +12,7 @@ This method also provides:
 
 - Automatic A+ rated SSL certificates
 - Easy (one-line) upgrades to new Coti node releases
+- A simple node monitor that restarts the node if it is not connected to the network
 
 The video below shows an example of the logs produced when launching a Coti node with Docker:
 
