@@ -203,7 +203,7 @@ Stay Coti. ️‍🔥
 <br />
 
 
-If you have questions, I hang out on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>. Come and say hi and talk Coti!
+If you have questions, feel free to contact me on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>.
 <br />
 <br />
 <br />
