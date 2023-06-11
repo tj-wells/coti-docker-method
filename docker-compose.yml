@@ -108,7 +108,7 @@ services:
         curl -s https://${ACTION}-nodemanager.coti.io/nodes > /dev/null && $(curl -sI https://${ACTION}-nodemanager.coti.io/nodes | grep -q 403) || \    
           ( \
             $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
-              echo 'Node monitor found node (${SERVERNAME})' || \
+              echo 'Node ${SERVERNAME} is connected.' || \
               (echo 'Node not found. Performing restart.' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
           ); \
       done" 
