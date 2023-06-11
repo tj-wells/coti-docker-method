@@ -95,20 +95,22 @@ services:
         max-size: "50m"
         max-file: "3"
 
-  # The node monitor checks if your node is up every 10 minutes and restarts it if it is not connected
+  # The node monitor checks whether your node is up every 10 minutes and restarts the node if it is not connected
   node-monitor:
-    image: docker:24.0.2
+    container_name: node-monitor
+    image: docker:24
     # Only check for presence of ${SERVERNAME} if the nodemanager is up and node is not blocked
     command: sh -c "apk add curl; \
       while true; \
       do \
-        curl -s https://${ACTION}-nodemanager.coti.io/nodes > /dev/null && $(curl -sI https://${ACTION}-nodemanager.coti.io/nodes | grep -q 403) || \    
-        ( \
-          $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
-            echo $(date '+%A %d %m %Y %X:') 'Node monitor found node ${SERVERNAME}' || \
-            (echo $(date '+%A %d %m %Y %X:') 'Node not found' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
-        ); \
         sleep 600; \
+        echo 'Performing status check:' $(date '+%A %d %m %Y %X'); \
+        curl -s https://${ACTION}-nodemanager.coti.io/nodes > /dev/null && $(curl -sI https://${ACTION}-nodemanager.coti.io/nodes | grep -q 403) || \    
+          ( \
+            $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
+              echo 'Node monitor found node (${SERVERNAME})' || \
+              (echo 'Node not found. Performing restart.' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
+          ); \
       done" 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
