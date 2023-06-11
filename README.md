@@ -12,19 +12,19 @@ This method also provides:
 
 - Automatic A+ rated SSL certificates
 - Easy (one-line) upgrades to new Coti node releases
-- A simple node monitor that restarts the node if it is not connected to the network
+- A simple node monitor that restarts the node when it is not connected to the Coti network
 
 The video below shows an example of the logs produced when launching a Coti node with Docker:
 
 https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-91c4-c6f05d7cb8cf.mov
 
-# [Docker Guide](https://docker.guides.coticommunity.com)
+# Docker Guide
 
 In addition to this readme, I have also made a guide that teaches some basic Docker concepts and walks readers through the steps of setting up a Coti node with Docker. The guide can be found [here](https://docker.guides.coticommunity.com).
 
-The Docker guide will likely be very helpful if you are not already very experienced with Docker.
+I recommend to start with the [Docker Guide](https://docker.guides.coticommunity.com) if you are still learning about Docker.
 
-If you are experienced with Docker, the instructions below should be enough to get your node running. If you have any doubts, you can always check the Docker guide, which gives a more detailed description of the setup process.
+If you have plenty of experience with Docker, the instructions below should be enough to run your node. If you have any doubts, you can always check the Docker guide, which gives a more detailed description of the setup process.
 
 Good luck!
 
@@ -88,7 +88,7 @@ VERSION="X.Y.Z"
 
 where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will automatically use the latest available release.
 
-# 🏃 Run Your Node
+# 🏃 Running Your Node
 
 Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend you run the container in the foreground so you can watch the logs of your node. To do this, run
 
