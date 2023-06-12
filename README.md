@@ -10,7 +10,7 @@
 
 This method also provides:
 
-- Automatically managed A+ rated SSL certificates
+- Automatic A+ rated SSL certificates
 - One-line upgrades to new Coti node releases
 - A node monitor that restarts the node when it is not connected to the Coti network
 
