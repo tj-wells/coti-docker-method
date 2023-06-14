@@ -99,7 +99,6 @@ services:
   node-monitor:
     container_name: node-monitor
     image: docker:24
-    # Only check for presence of ${SERVERNAME} if the nodemanager is up and the IP is not blocked
     command: sh -c "apk add curl; \
       while true; \
       do \
