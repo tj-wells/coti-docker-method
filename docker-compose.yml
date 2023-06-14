@@ -105,7 +105,7 @@ services:
       do \
         sleep 600; \
         echo 'Performing status check:' $(date '+%A %d %m %Y %X'); \
-        curl -s https://${ACTION}-nodemanager.coti.io/nodes > /dev/null && $(curl -sI https://${ACTION}-nodemanager.coti.io/nodes | grep -q 403) || \    
+        $(curl -o /dev/null -s -w '%{http_code}\n' https://${ACTION}-nodemanager.coti.io/nodes | grep -q 200) && \    
           ( \
             $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
               echo 'Node ${SERVERNAME} is connected.' || \
