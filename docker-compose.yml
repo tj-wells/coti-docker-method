@@ -109,7 +109,8 @@ services:
             $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
               echo 'Node ${SERVERNAME} is connected.' || \
               (echo 'Node not found. Performing restart.' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node traefik); \
-          ); \
+          ) || \
+          echo 'Node manager returned unusual status code:' $(curl -o /dev/null -s -w '%{http_code}\n' https://${ACTION}-nodemanager.coti.io/nodes); \
       done" 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
