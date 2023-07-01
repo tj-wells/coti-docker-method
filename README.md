@@ -33,13 +33,13 @@ Good luck!
 This method relies on having the programs `docker` and `docker-compose` installed. First, log in as root using `sudo su`. Then, `docker` can be installed with
 
 ```
-curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+curl -fsSL https://get.docker.com | bash
 ```
 
 and `docker-compose` can be installed with
 
 ```
-curl -L https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 ```
 
 You can check if your installations were successful by running
