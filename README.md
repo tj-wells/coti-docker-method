@@ -8,11 +8,11 @@
 
 <!-- <p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/> -->
 
-With this method, you get:
+This method, provides:
 
-- Automatic A+ rated SSL certificates
 - One-line upgrades to new Coti node releases
 - A node monitor that restarts the node if it becomes disconnected from the Coti network
+- A+ rated SSL certificates
 
 The video below demonsrates launching a Coti node with Docker:
 
@@ -20,23 +20,23 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-In addition to this readme, I have also made a guide that teaches some basic Docker concepts and walks readers through the steps of setting up a Coti node with Docker. The guide can be found [here](https://docker.guides.coticommunity.com).
+If you're not familiar with Docker, I recommend checking out the guide I wrote which is available [here](https://docker.guides.coticommunity.com).
 
-I recommend starting with the [Docker Guide](https://docker.guides.coticommunity.com) if you are still learning about Docker.
-
-If you are confident with using Docker, the instructions below should be enough to run your node. If you have any doubts, the Docker guide may still come in useful.
+If you've already used Docker, the instructions below should be enough to run your node.
 
 Good luck!
 
 # Instructions
 
-This method relies on having the programs `docker` and `docker-compose` installed. First, log in as root using `sudo su`. Then, `docker` can be installed with
+This method relies on having the programs `docker` and `docker-compose` installed. First, log in as root using `sudo su`.
+
+`docker` can be installed with
 
 ```
 curl -fsSL https://get.docker.com | bash
 ```
 
-and `docker-compose` can be installed with
+`docker-compose` can be installed with
 
 ```
 curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
@@ -52,7 +52,7 @@ docker-compose --version
 
 ## 1. Clone the Repository
 
-The contents of this repository can be downloaded to your machine using
+You can download the contents of this repository using
 
 ```
 git clone https://github.com/tomjwells/coti-node.git && cd coti-node
@@ -60,7 +60,7 @@ git clone https://github.com/tomjwells/coti-node.git && cd coti-node
 
 ## 2. Create a `.env` File
 
-A `.env` file is used to define the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a text file called `.env`. The environment variables in the `.env` file should be formatted as follows,
+A `.env` file defines the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a new text file called `.env`. The environment variables in the `.env` file should be formatted as follows,
 
 ```.env
 ACTION="<mainnet or testnet>"
@@ -80,13 +80,13 @@ where,
 
 ### Optional Variables
 
-Adding a `VERSION` variable to your `.env` file allows you to define which version of the Coti node should be run by Docker. If the `VERSION` is not specified, Docker will automatically use the latest version. The version variable should be set as
+Optionally, you may add a `VERSION` variable to your `.env` file, which allows you to define the version of the Coti node to run. If the `VERSION` is not specified, Docker will automatically use the latest version. The version variable can be set as
 
 ```.env
 VERSION="X.Y.Z"
 ```
 
-where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags). If the version is not specified, Docker will automatically use the latest available release.
+where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
 # 🏃 Running Your Node
 
