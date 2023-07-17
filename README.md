@@ -157,21 +157,13 @@ If you encounter issues not mentioned in this list, please message me (<a href="
 
 # ⚙️ Updating the Coti Node Version
 
-If you have not set the `VERSION` environment variable in your .env file, to update the Coti node version, simply run
+If you have set the `VERSION` variable in your `.env` file, make sure to adjust that value first. If you haven't specified a `VERSION`, then you don't need to change anything. To update your node version, run
 
 ```
 docker-compose up -d
 ```
 
-This causes Docker to check for new versions of the Docker image and installs the latest available version.
-
-If the `VERSION` environment variable was specified, you should first edit the version in your `.env` file. After that, running
-
-```
-docker-compose up -d
-```
-
-will update your node.
+This causes Docker to install either the specified version, or the latest available version.
 
 A complete list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
