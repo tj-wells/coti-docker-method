@@ -203,9 +203,5 @@ Stay Coti. ️‍🔥
 <br />
 
 
-If you have questions, feel free to contact me on twitter <a href="https://twitter.com/tomjwells">@tomjwells</a>.
-<br />
-<br />
-<br />
 
 <p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://camo.githubusercontent.com/a927d600622b8bbc7571407c935c7a62f5838e91829fbee0a7ca2be31ba5cbe7/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3436353638363334383233343335383830342f313038383834333036373432353035303738342f61746f6d732d332d30312e706e673f77696474683d383532266865696768743d383530" style="width: 330px"></a></p>
