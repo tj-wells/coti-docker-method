@@ -191,10 +191,6 @@ As there currently is no official Docker image, this method uses a community-bui
 
 To ensure that the images are produced in a fully accountable and transparent way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>. You can find the built images on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
-# 🧑‍🔬 How can I monitor my node?
-
-Using Docker makes it easy to add other applications to your node. <a href="https://github.com/tomjwells/coti-node-monitoring" target="_blank">See my guide</a> for setting up a monitoring dashboard for Coti nodes.
-
 # Stay Coti
 
 Stay Coti. ️‍🔥
