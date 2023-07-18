@@ -10,8 +10,8 @@
 
 This method, provides:
 
-- One-line upgrades to new Coti node releases
 - A node monitor that restarts the node if it becomes disconnected from the Coti network
+- Easy upgrades to new Coti node releases
 - A+ rated SSL certificates
 
 The video below demonsrates launching a Coti node with Docker:
