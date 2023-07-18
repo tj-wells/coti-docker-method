@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-If you're not familiar with Docker, I recommend checking out the guide I wrote which is available [here](https://docker.guides.coticommunity.com).
+If you haven't used Docker before, I recommend checking out the guide I wrote which is available [here](https://docker.guides.coticommunity.com).
 
 If you've already used Docker, the instructions below should be enough to run your node.
 
@@ -50,7 +50,7 @@ docker-compose --version
 ```
 
 
-## 1. Get the Files you Need
+## 1. Download the Files you Need
 
 The command below will download the files you need to run the node
 
