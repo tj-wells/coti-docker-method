@@ -50,9 +50,9 @@ docker-compose --version
 ```
 
 
-## 1. Clone the Repository
+## 1. Get the Files you Need
 
-You can download the contents of this repository using
+The command below will download the files you need to run the node
 
 ```
 git clone https://github.com/tomjwells/coti-node.git && cd coti-node
