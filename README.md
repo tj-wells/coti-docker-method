@@ -90,7 +90,7 @@ where X.Y.Z is a valid version number in semver notation. A list of the availabl
 
 # 🏃 Running Your Node
 
-Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend you run the container in the foreground so you can watch the logs of your node. To do this, run
+Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend running the container in the foreground so you can watch the logs of your node. To do this, run
 
 ```
 docker-compose up
@@ -119,7 +119,7 @@ If you are confident your node runs correctly, you can run it in the background 
 docker-compose up -d
 ```
 
-You can still follow the logs of a container that's running a background, with
+You can still follow the logs of a container that's running in the background, with
 
 ```
 docker-compose logs --follow
