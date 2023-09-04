@@ -151,11 +151,8 @@ For the SSL verification to work, your server needs to be able to accept incomin
     </ul>
 	If you have made port 7070 accessible to the general internet (which may be useful for debugging), you can verify that port 7070 is working correctly in your browser by entering the url `http://YOUR-NODE-URL:7070/nodeHash`, which should return your node hash. As an example for my node this would be <a href="http://testnet.atomnode.tomoswells.com:7070/nodeHash">http://testnet.atomnode.tomoswells.com:7070/nodeHash</a>. Note: After experimenting I found this not to work consistently in all browsers (due to SSL errors), but it has worked for me reliably in firefox and safari. You can also use the command line program `curl`, for example `curl http://testnet.atomnode.tomoswells.com:7070/nodeHash`.
 </details>
-<br />
 
-If you encounter issues not mentioned in this list, please message me (<a href="https://twitter.com/tomjwells">@tomjwells</a>), consult GeordieR's helpful <a href="https://cotidocs.geordier.co.uk/" target="_blank">gitbook guide</a>, or post your question in the node-operators channel in the [Coti Discord server](https://discord.com/invite/wfAQfbc3Df).
-
-# ⚙️ Updating the Coti Node Version
+# ⚙️ Updating the Coti Node
 
 If you have set the `VERSION` variable in your `.env` file, make sure to adjust that value first. If you haven't specified a `VERSION`, then you don't need to change anything. To update your node version, run
 
@@ -167,10 +164,6 @@ This causes Docker to install either the specified version, or the latest availa
 
 A complete list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
-## Upgrading through a Web Interface
-
-If you don't want the inconvenience of logging into your server to make manual upgrades, a service called Portainer can be used to manage Docker containers from a web interface. If you want to run your node this way, check my [coti-node-portainer](https://github.com/tomjwells/coti-node-portainer) repository.
-
 # ✨ Credits
 
 - This method uses the official code for Coti nodes at https://github.com/coti-io/coti-node.
@@ -179,9 +172,9 @@ If you don't want the inconvenience of logging into your server to make manual u
 
 # 🐳 Which Docker image is used?
 
-As there currently is no official Docker image, this method uses a community-built Docker image. I have submitted a [pull request](https://github.com/coti-io/coti-node/pull/54) to the Coti team to include a github action that would build official Docker images of the Coti node.
+As there currently is no official Docker image, this repository uses a community-built Docker image. I have opened a [pull request](https://github.com/coti-io/coti-node/pull/54) to the Coti team to include a github action that would build official Docker images of the Coti node.
 
-To ensure that the images are produced in a fully accountable and transparent way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>. You can find the built images on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
+To ensure that the images are produced in a transparent way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>. The images are stored on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # Stay Coti
 
