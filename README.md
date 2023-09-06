@@ -6,8 +6,6 @@
     <a href="https://twitter.com/intent/tweet?text=I+just+installed+my+%23COTI+node+with+%40tomjwells%27+Docker+installation+method.+It+worked+like+a+charm%21+%F0%9F%94%A5%0D%0A%0D%0Ahttps%3A%2F%2Fgithub.com%2Ftomjwells%2Fcoti-node%0D%0A%0D%0A%24COTI+%24DJED+%24SHEN+"><img src="https://randojs.com/images/tweetShield.svg" alt="Tweet" height="20"/></a>
 </p>
 
-<!-- <p align="center"><a href="https://github.com/tomjwells/gif/blob/master/coti-node-demo-clipped_censored_1080p.gif"><img src="https://media.discordapp.net/attachments/995792094088155227/1070494059610767400/header_img_white-01.png?width=1300&height=825" width="100%" /></a></p><br/> -->
-
 This method, provides:
 
 - A node monitor that restarts the node if it becomes disconnected from the Coti network
@@ -170,11 +168,11 @@ A complete list of the available versions can be found at [Dockerhub](https://hu
 - Thanks to [GeordieR](https://twitter.com/Geordie_R), whose scripts helped me in developing this installation method using Docker.
 - Credits to the Coti community for the vital support and guidance given to testnet and mainnet node operators.
 
-# 🐳 Which Docker image is used?
+# 🐳 Which Docker image does this use?
 
-As there currently is no official Docker image, this repository uses a community-built Docker image. I have opened a [pull request](https://github.com/coti-io/coti-node/pull/54) to the Coti team to include a github action that would build official Docker images of the Coti node.
+This repository uses a community-built Docker image since there is currently no official image.
 
-To ensure that the images are produced in a transparent way, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>. The images are stored on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
+To ensure that the images are produced in a transparent way, the images are built publicly using Github Actions in [this repository](https://github.com/tomjwells/coti-node-images). The images are stored on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # Stay Coti
 
