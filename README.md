@@ -152,7 +152,7 @@ For the SSL verification to work, your server needs to be able to accept incomin
 
 # ⚙️ Updating the Coti Node
 
-If you have set the `VERSION` variable in your `.env` file, make sure to adjust that value first. If you haven't specified a `VERSION`, then you don't need to change anything. To update your node version, run
+If you have set the `VERSION` variable in your `.env` file, make sure to adjust that value first. If there is no `VERSION` in your `.env` file, then you don't need to change anything and running the command below will update your node to the latest version. To perform your update, run
 
 ```
 docker-compose up -d
