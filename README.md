@@ -18,29 +18,27 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-If you haven't used Docker before, I recommend checking out the guide I wrote which is available [here](https://docker.guides.coticommunity.com).
+If you're not familiar with Docker, I wrote a more beginner-friendly guide, which is available [here](https://docker.guides.coticommunity.com).
 
-If you've already used Docker, the instructions below should be enough to run your node.
+If you have used Docker before, the instructions below should be enough to run your node.
 
 Good luck!
 
 # Instructions
 
-This method relies on having the programs `docker` and `docker-compose` installed. First, log in as root using `sudo su`.
-
-`docker` can be installed with
+This method relies on having the programs `docker` and `docker-compose` installed. As the root user, `docker` and `docker-compose` can be installed with
 
 ```
 curl -fsSL https://get.docker.com | bash
 ```
 
-`docker-compose` can be installed with
+and
 
 ```
 curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 ```
 
-You can check if your installations were successful by running
+respectively. You can check if the programs installed correctly by running
 
 ```
 docker --version
@@ -58,7 +56,7 @@ git clone https://github.com/tomjwells/coti-node.git && cd coti-node
 
 ## 2. Create a `.env` File
 
-A `.env` file defines the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a new text file called `.env`. The environment variables in the `.env` file should be formatted as follows,
+A `.env` file is an easy way to define the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a new text file called `.env`. The environment variables in the `.env` file should be formatted as,
 
 ```.env
 ACTION="<mainnet or testnet>"
@@ -88,13 +86,13 @@ where X.Y.Z is a valid version number in semver notation. A list of the availabl
 
 # 🏃 Running Your Node
 
-Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend running the container in the foreground so you can watch the logs of your node. To do this, run
+Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend running the container in the foreground so you can check the logs of your node. To do this, run
 
 ```
 docker-compose up
 ```
 
-Make sure your logs look healthy, and compare your logs with the screenshots in the dropdown below if you have doubts.
+Make sure your logs look healthy, I have provided some sample logs in the screenshots below if you're not sure what to expect.
 
 <details>
     <summary>Click to view examples of healthy node logs</summary>
@@ -170,9 +168,9 @@ A complete list of the available versions can be found at [Dockerhub](https://hu
 
 # 🐳 Which Docker image does this use?
 
-This repository uses a community-built Docker image since there is currently no official image.
+This repository uses a community-built Docker image (there is currently no official image).
 
-To ensure that the images are produced in a transparent way, the images are built publicly using Github Actions in [this repository](https://github.com/tomjwells/coti-node-images). The images are stored on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
+To ensure that the images are trustable, the images are built publicly using Github Actions in [this repository](https://github.com/tomjwells/coti-node-images). The images are stored on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # Stay Coti
 
