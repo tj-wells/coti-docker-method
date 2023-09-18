@@ -88,8 +88,6 @@ services:
       - letsencrypt:/letsencrypt/
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik_conf.yml:/traefik_conf.yml # SSL A+ (https://www.simplecto.com/improve-traefik-https-encryption-qualys-ssl-labs-testssl-sh/)
-#     networks:
-#       - default
     logging:
       options:
         max-size: "50m"
@@ -115,3 +113,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - .:/coti-node
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "3"
