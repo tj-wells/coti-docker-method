@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-If you're not familiar with Docker, I wrote a more beginner-friendly guide, which is available [here](https://docker.guides.coticommunity.com).
+If you're not familiar with Docker, a more beginner-friendly guide is available [here](https://docker.guides.coticommunity.com).
 
 If you have used Docker before, the instructions below should be enough to run your node.
 
@@ -76,15 +76,18 @@ where,
 
 ### Optional Variables
 
-Optionally, you may add a `VERSION` variable to your `.env` file, which allows you to define the version of the Coti node to run. If the `VERSION` is not specified, Docker will automatically use the latest version. The version variable can be set as
+You may optionally add a `VERSION` variable to your `.env` file, to run a specific version of the Coti node. If the `VERSION` is not specified, the latest version will be used. The version variable can be set as
 
 ```.env
 VERSION="X.Y.Z"
 ```
 
-where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found on [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
+where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
 
-# 🏃 Running Your Node
+# 🏃 Running The Node
+
+> **Note**
+> Make sure port 7070 is open and accessible before running your node. The Coti node manager uses this port to communicate with the node.
 
 Now you're ready to run your node! Docker containers can be run in the foreground or in the background. The first few times you run your node, I recommend running the container in the foreground so you can check the logs of your node. To do this, run
 
