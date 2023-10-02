@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-If you're not familiar with Docker, a more beginner-friendly guide is available [here](https://docker.guides.coticommunity.com).
+If you're not familiar with Docker, a more beginner-friendly guide is available <a href="https://docker.guides.coticommunity.com" target="_blank">here</a>.
 
 If you have used Docker before, the instructions below should be enough to run your node.
 
@@ -70,8 +70,8 @@ where,
 
 - `ACTION` is set to either "testnet" or "mainnet", depending on your use-case.
 - `SERVERNAME` is your node's URL in the form "testnet.my-node.com", i.e., including subdomains (where applicable), and excluding "http(s)://" and "www.".
-- `PKEY` is your private key. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on obtaining your private key.).
-- `SEED` is your wallet's seed. (See [here](https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed) for guidance on generating a seed for your wallet.).
+- `PKEY` is your private key. (See <a href="https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed" target="_blank">here</a> for guidance on obtaining your private key.).
+- `SEED` is your wallet's seed. (See <a href="https://cotidocs.geordier.co.uk/wallet-and-kyc/generating-your-seed" target="_blank">here</a> for guidance on generating a seed for your wallet.).
 - `EMAIL` is the email address used to register your SSL certificate.
 
 ### Optional Variables
@@ -82,7 +82,7 @@ You may optionally add a `VERSION` variable to your `.env` file, to run a specif
 VERSION="X.Y.Z"
 ```
 
-where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
+where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found at <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # 🏃 Running The Node
 
@@ -161,7 +161,7 @@ docker-compose up -d
 
 This causes Docker to install either the specified version, or the latest available version.
 
-A complete list of the available versions can be found at [Dockerhub](https://hub.docker.com/r/atomnode/coti-node/tags).
+A complete list of the available versions can be found at <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # ✨ Credits
 
@@ -171,9 +171,9 @@ A complete list of the available versions can be found at [Dockerhub](https://hu
 
 # 🐳 Which Docker image does this use?
 
-This repository uses a community-built Docker image (there is currently no official image).
+This repository uses a <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">community-built Docker image</a> (there is currently no official image).
 
-To ensure that the images are trustable, the images are built publicly using Github Actions in [this repository](https://github.com/tomjwells/coti-node-images). The images are stored on <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
+To ensure that the images are trustable, the images are built publicly using Github Actions in <a href="https://github.com/tomjwells/coti-node-images" target="_blank">this repository</a>.
 
 # Stay Coti
 
