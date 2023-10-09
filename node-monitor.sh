@@ -35,6 +35,7 @@ function restart_if_unsynced() {
 }
 
 while true; do
+  sleep 600
   echo "Performing status check: $(date '+%A %d %m %Y %X')"
   status_code=$(curl -o /dev/null -s -w '%{http_code}' https://${network}-nodemanager.coti.io/nodes)
 
@@ -50,6 +51,5 @@ while true; do
   else
     echo "  Node manager returned unusual status code: $status_code"
   fi
-  sleep 600
 done
 
