@@ -8,3 +8,6 @@ tls:
         - secp521r1
         - secp384r1
       sniStrict: true
+
+    mintls13:
+      minVersion: VersionTLS13
