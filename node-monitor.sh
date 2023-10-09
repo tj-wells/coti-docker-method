@@ -8,9 +8,7 @@ unsync_tolerance=10
 RESTART_COMMAND="docker-compose -f /coti-node/docker-compose.yml restart coti-node"
 
 function get_last_index() {
-  local response=$(curl -s "https://$1/transaction/lastIndex")
-  local last_index=$(echo "$response" | jq -r '.lastIndex')
-  echo "$last_index"
+  echo "$(curl -s "https://$1/transaction/lastIndex" | jq -r '.lastIndex')"
 }
 
 function restart_if_unsynced() {
@@ -23,34 +21,35 @@ function restart_if_unsynced() {
 
   # Check $node_last_index and $sync_ref_node_last_index are integers
   if [[ -z "$node_last_index" || -z "$sync_ref_node_last_index" ]]; then
-    echo "Error getting last_index. Try again later"
+    echo "  Error getting last_index. Try again later"
     return 1
   fi
 
-  if [ $((sync_ref_node_last_index - node_last_index)) -gt "$unsync_tolerance" ]; then
-    echo "Node is unsynced. Performing restart."
+  local sync_diff=$((sync_ref_node_last_index - node_last_index))
+  if (( sync_diff > unsync_tolerance )); then
+    echo "  Node is unsynced. Performing restart."
     $RESTART_COMMAND
   else
-    echo "Node is synced."
+    echo "  Node is synced. (difference=$sync_diff)"
   fi
 }
 
 while true; do
-  sleep 600
   echo "Performing status check: $(date '+%A %d %m %Y %X')"
   status_code=$(curl -o /dev/null -s -w '%{http_code}' https://${network}-nodemanager.coti.io/nodes)
 
 
   if [ "$status_code" -eq 200 ]; then
     if curl -s https://${network}-nodemanager.coti.io/nodes | grep -q ${node_url}; then
-      echo "Node ${node_url} is connected."
+      echo "  Node ${node_url} is connected."
       restart_if_unsynced "$node_url" "$sync_ref_node_url" "$unsync_tolerance"
     else
-      echo "Node not found. Performing restart."
+      echo "  Node not found. Performing restart."
       $RESTART_COMMAND
     fi
   else
-    echo "Node manager returned unusual status code: $status_code"
+    echo "  Node manager returned unusual status code: $status_code"
   fi
+  sleep 600
 done
 
