@@ -35,6 +35,7 @@ function restart_if_unsynced() {
 }
 
 while true; do
+  sleep 600
   echo "Performing status check: $(date '+%A %d %m %Y %X')"
   status_code=$(curl -o /dev/null -s -w '%{http_code}' https://${network}-nodemanager.coti.io/nodes)
 
@@ -42,7 +43,7 @@ while true; do
   if [ "$status_code" -eq 200 ]; then
     if curl -s https://${network}-nodemanager.coti.io/nodes | grep -q ${node_url}; then
       echo "  Node ${node_url} is connected."
-      restart_if_unsynced "$node_url" "$sync_ref_node_url" "$unsync_tolerance"
+      restart_if_unsynced $node_url $sync_ref_node_url $unsync_tolerance
     else
       echo "  Node not found. Performing restart."
       $RESTART_COMMAND
@@ -50,6 +51,5 @@ while true; do
   else
     echo "  Node manager returned unusual status code: $status_code"
   fi
-  sleep 600
 done
 
