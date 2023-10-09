@@ -26,7 +26,7 @@ function restart_if_unsynced() {
   fi
 
   local sync_diff=$((sync_ref_node_last_index - node_last_index))
-  if (( sync_diff > unsync_tolerance )); then
+  if [ $sync_diff -gt $unsync_tolerance ]; then
     echo "  Node is unsynced. Performing restart."
     $RESTART_COMMAND
   else
@@ -35,7 +35,6 @@ function restart_if_unsynced() {
 }
 
 while true; do
-  sleep 600
   echo "Performing status check: $(date '+%A %d %m %Y %X')"
   status_code=$(curl -o /dev/null -s -w '%{http_code}' https://${network}-nodemanager.coti.io/nodes)
 
@@ -51,5 +50,6 @@ while true; do
   else
     echo "  Node manager returned unusual status code: $status_code"
   fi
+  sleep 600
 done
 
