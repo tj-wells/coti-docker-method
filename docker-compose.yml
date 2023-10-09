@@ -1,11 +1,5 @@
 version: '3'
 
-# networks:
-#   default:
-#     name: gateway
-#     external: true
-#     driver: bridge
-
 volumes:
   coti_config:
   coti_db:
@@ -23,6 +17,7 @@ services:
     expose:
       - 7070
       - 80
+    restart: on-failure
     env_file:
       - .env
     volumes:
@@ -93,23 +88,11 @@ services:
         max-size: "50m"
         max-file: "3"
 
-  # A node monitor that checks whether your node is connected to the node manager every 10 minutes, and restarts the node if it is not connected
+  # The node monitor checks whether your node is up every 10 minutes and restarts the node if it is not connected
   node-monitor:
     container_name: node-monitor
     image: docker:24
-    command: sh -c "apk add curl; \
-      while true; \
-      do \
-        sleep 600; \
-        echo 'Performing status check:' $(date '+%A %d %m %Y %X'); \
-        $(curl -o /dev/null -s -w '%{http_code}\n' https://${ACTION}-nodemanager.coti.io/nodes | grep -q 200) && \    
-          ( \
-            $(curl -s https://${ACTION}-nodemanager.coti.io/nodes | grep -q ${SERVERNAME}) && \
-              echo 'Node ${SERVERNAME} is connected.' || \
-              (echo 'Node not found. Performing restart.' && docker-compose -f /coti-node/docker-compose.yml up -d coti-node); \
-          ) || \
-          echo 'Node manager returned unusual status code:' $(curl -o /dev/null -s -w '%{http_code}\n' https://${ACTION}-nodemanager.coti.io/nodes); \
-      done" 
+    command: sh -c "/coti-node/node-monitor.sh ${ACTION} ${SERVERNAME}" 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - .:/coti-node
