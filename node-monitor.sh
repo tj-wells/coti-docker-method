@@ -20,7 +20,7 @@ function restart_if_unsynced() {
   local sync_ref_node_last_index=$(get_last_index "$sync_ref_node_url")
 
   # Check if $node_last_index and $sync_ref_node_last_index are integers
-  if [[ -z "$node_last_index" || -z "$sync_ref_node_last_index" ]]; then
+  if ! echo "$node_last_index" | grep -qE '^[0-9]+$' || ! echo "$sync_ref_node_last_index" | grep -qE '^[0-9]+$'; then
     echo "  Error getting last_index. Try again later"
     return 1
   fi
