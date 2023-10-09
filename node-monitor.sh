@@ -3,7 +3,7 @@ apk add curl jq > /dev/null
 # Usage: ./node-monitor.sh testnet testnet.your-node.com
 network="$1"                                # mainnet | testnet
 node_url="$2"                               # e.g. testnet.your-node.com
-sync_ref_node_url="$network-financialserver.coti.io"
+sync_ref_node_url="${network}-financialserver.coti.io"
 unsync_tolerance=10
 RESTART_COMMAND="docker-compose -f /coti-node/docker-compose.yml restart coti-node"
 
