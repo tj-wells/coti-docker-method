@@ -1,5 +1,6 @@
 apk add curl jq > /dev/null
 
+# Usage: ./node-monitor.sh testnet testnet.your-node.com
 network="$1"                                # mainnet | testnet
 node_url="$2"                               # e.g. testnet.your-node.com
 sync_ref_node_url=testnet-trustscore1.coti.io
