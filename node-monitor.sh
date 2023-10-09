@@ -26,11 +26,11 @@ function restart_if_unsynced() {
   fi
 
   local index_diff=$((sync_ref_node_last_index - node_last_index))
-  if [ $index_diff -gt $unsync_tolerance ]; then
+  if [ $index_diff -le $unsync_tolerance ]; then
+    echo "  Node is synced (difference=$index_diff)."
+  else
     echo "  Node is unsynced (difference=$index_diff). Performing restart."
     $RESTART_COMMAND
-  else
-    echo "  Node is synced (difference=$index_diff)."
   fi
 }
 
