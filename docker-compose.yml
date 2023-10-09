@@ -92,7 +92,7 @@ services:
   node-monitor:
     container_name: node-monitor
     image: docker:24
-    command: sh -c "/coti-node/node-monitor.sh ${ACTION} ${SERVERNAME}" 
+    command: sh -c "apk add curl jq > /dev/null && /coti-node/node-monitor.sh ${ACTION} ${SERVERNAME}" 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - .:/coti-node

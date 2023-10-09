@@ -1,8 +1,6 @@
-apk add curl jq > /dev/null
-
-# Usage: ./node-monitor.sh testnet testnet.your-node.com
+# Usage: ./node-monitor.sh testnet your-node-url.com
 network="$1"                                # mainnet | testnet
-node_url="$2"                               # e.g. testnet.your-node.com
+node_url="$2"                               # e.g. your-node-url.com
 sync_ref_node_url="${network}-financialserver.coti.io"
 unsync_tolerance=10
 RESTART_COMMAND="docker-compose -f /coti-node/docker-compose.yml restart coti-node"
@@ -38,7 +36,6 @@ while true; do
   sleep 600
   echo "Performing status check: $(date '+%A %d %m %Y %X')"
   status_code=$(curl -o /dev/null -s -w '%{http_code}' https://${network}-nodemanager.coti.io/nodes)
-
 
   if [ "$status_code" -eq 200 ]; then
     if curl -s https://${network}-nodemanager.coti.io/nodes | grep -q ${node_url}; then
