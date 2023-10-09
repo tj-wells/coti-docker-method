@@ -1,3 +1,6 @@
+# For a version that allows the node to unsynced for a fixed duration before restarting, 
+# see https://github.com/tomjwells/coti-node/blob/master/node-monitor-with-unsync-duration.sh
+
 # Usage: ./node-monitor.sh testnet your-node-url.com
 network="$1"                                # mainnet | testnet
 node_url="$2"                               # e.g. your-node-url.com
