@@ -1,4 +1,4 @@
-# For a version that allows the node to unsynced for a fixed duration before restarting, 
+# For a version that allows the node to remain unsynced for a fixed duration before restarting, 
 # see https://github.com/tomjwells/coti-node/blob/master/node-monitor-with-unsync-duration.sh
 
 # Usage: ./node-monitor.sh testnet your-node-url.com
