@@ -54,7 +54,7 @@ The command below downloads all of the files you need to run the node
 git clone https://github.com/tomjwells/coti-node.git && cd coti-node
 ```
 
-## 2. Create a `.env` File
+## 2. Environment Variables
 
 A `.env` file is an easy way to define the variables used to run your Coti node. You can start from an [example](https://github.com/tomjwells/coti-node/blob/master/.env.sample) `.env` file by running `cp .env.sample .env`, or copy and paste the code snippet below into a new text file called `.env`. The environment variables in the `.env` file should be formatted as,
 
@@ -76,13 +76,13 @@ where,
 
 ### Optional Variables
 
-You may optionally add a `VERSION` variable to your `.env` file, to run a specific version of the Coti node. If the `VERSION` is not specified, the latest version will be used. The version variable can be set as
+You can add an optional `VERSION` variable to your `.env` file, which will define a specific version of the Coti node to run. If the `VERSION` is not specified, the latest version will be used. The version variable can be set as
 
 ```.env
 VERSION="X.Y.Z"
 ```
 
-where X.Y.Z is a valid version number in semver notation. A list of the available versions can be found at <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
+where X.Y.Z is a valid version number in semver notation. A list of the valid versions can be found at <a href="https://hub.docker.com/r/atomnode/coti-node/tags" target="_blank">Dockerhub</a>.
 
 # 🏃 Running The Node
 
