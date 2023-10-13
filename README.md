@@ -8,7 +8,7 @@
 
 This method provides:
 
-- A node monitor that restarts the node if it becomes disconnected from the Coti network
+- A node monitor that restarts the node if it becomes disconnected or unsyncs from the Coti network
 - Simple upgrades to new Coti node releases
 - A+ rated SSL certificates
 
