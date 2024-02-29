@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/5472339/233216833-a8843218-c180-4d78-9
 
 # Docker Guide
 
-If you're not familiar with Docker, a more beginner-friendly guide is available <a href="https://docker.guides.coticommunity.com" target="_blank">here</a>.
+If you're not familiar with Docker, a beginner-friendly guide is available <a href="https://docker.guides.coticommunity.com" target="_blank">here</a>.
 
 If you have used Docker before, the instructions below should be enough to run your node.
 
@@ -179,8 +179,3 @@ To ensure that the images are trustable, the images are built publicly using Git
 
 Stay Coti. ️‍🔥
 <br />
-<br />
-<br />
-
-
-<p align="center"><a href="https://atomnode.tomoswells.com" target="_blank"><img src="https://pay.coti.io/nodes/atomnode.png" style="width: 200px"></a></p>
